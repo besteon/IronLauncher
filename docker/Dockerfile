@@ -45,9 +45,14 @@ RUN apt-get update && \
         xdotool \
         python3 \
         python3-pip \
-        python3.10-venv
+        python3.10-venv \
+        libcairo2-dev \
+        curl \
+        xdelta3
 
-RUN useradd -ms /bin/bash $USER  
+RUN useradd -ms /bin/bash $USER && \
+  wget https://github.com/btimofeev/lazy_ips/archive/refs/heads/master.zip && \
+  unzip master.zip && cd lazy_ips-master && python3 setup.py install
 
 USER $USER
 WORKDIR /home/$USER
