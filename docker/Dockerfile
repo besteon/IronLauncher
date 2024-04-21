@@ -7,6 +7,12 @@ ENV XKB_DEFAULT_RULES=base
 
 ENV USER=launcher
 ARG HOME=/home/$USER
+ARG BIZHAWK_FILES=$HOME/files/bizhawk
+ARG PATCHES=$HOME/files/PATCHES
+ARG TRACKER=$HOME/files/ironmon-tracker
+ARG TOOLS=$HOME/files/tools
+ARG BINARIES=$TOOLS/binaries
+ENV SCRIPTS=$TOOLS/scripts
 
 #Install dependencies
 RUN apt-get update && \
@@ -50,17 +56,19 @@ RUN apt-get update && \
         curl \
         xdelta3
 
-RUN useradd -ms /bin/bash $USER && \
+ADD files $HOME/files
+
+RUN useradd -ms /bin/bash $USER && chown -R $USER $HOME && \
   wget https://github.com/btimofeev/lazy_ips/archive/refs/heads/master.zip && \
   unzip master.zip && cd lazy_ips-master && python3 setup.py install
 
 USER $USER
-WORKDIR /home/$USER
-RUN mkdir /home/$USER/BizHawk && python3 -m venv venv
+WORKDIR $HOME
 
 # Install Bizhawk & Ironmon-Tracker & Randomizer & Extensions
-COPY BizHawk_devbuild_45e2307a.zip $HOME/BizHawk/
-RUN unzip $HOME/BizHawk/BizHawk_devbuild_45e2307a.zip && \
+RUN mkdir -p $HOME/.local/share/fonts && mv $TRACKER/Franklin\ Gothic\ Medium\ Regular.ttf $HOME/.local/share/fonts && fc-cache -f && \
+  python3 -m venv venv && \
+  mkdir /home/$USER/BizHawk && unzip $BIZHAWK_FILES/BizHawk_devbuild_45e2307a.zip && \
   tar -xvf BizHawk_devbuild_45e2307a.tar -C BizHawk && \
   chmod +x BizHawk/EmuHawkMono.sh && \
   wget https://github.com/besteon/Ironmon-Tracker/releases/download/v8.5.1/Ironmon-Tracker.zip && \
@@ -80,25 +88,17 @@ RUN unzip $HOME/BizHawk/BizHawk_devbuild_45e2307a.zip && \
   wget https://github.com/WaffleSmacker/SmackerTracker-IronmonExtension/releases/download/v1.2/SmackerTracker.zip && \
   unzip SmackerTracker.zip -d $HOME/BizHawk/Lua/Ironmon-Tracker/extensions/ && \
   wget https://github.com/Fellshadow/Ironmon-Tracker-AutoPokemonThemes/releases/download/v1.2/AutoPokemonThemes_v1.2.zip && \
-  unzip AutoPokemonThemes_v1.2.zip -d $HOME/BizHawk/Lua/Ironmon-Tracker/extensions/
+  unzip AutoPokemonThemes_v1.2.zip -d $HOME/BizHawk/Lua/Ironmon-Tracker/extensions/ && \
+  mv $BIZHAWK_FILES/config.ini $HOME/BizHawk/ && \
+  mv $TRACKER/Settings.ini $HOME/BizHawk/Lua/Ironmon-Tracker/
 
-COPY entrypoint_user.sh $HOME/entrypoint_user.sh
-COPY launcherapi.py $HOME/launcherapi.py
-  
-# java -Xmx4608M -jar PokeRandoZX.jar please-use-the-launcher
-
-RUN mkdir -p $HOME/.local/share/fonts
-COPY ["ironmon-tracker/Franklin Gothic Medium Regular.ttf", "/home/launcher/.local/share/fonts/"]
-RUN fc-cache -f
-
-COPY bizhawk/config.ini $HOME/BizHawk/
-COPY ironmon-tracker/Settings.ini $HOME/BizHawk/Lua/Ironmon-Tracker/
+# This will not be present in the final build
 COPY roms $HOME/roms
 
-
 USER root
-RUN chmod 777 $HOME/entrypoint_user.sh && $HOME/venv/bin/pip install flask
-COPY entrypoint_root.sh /entrypoint_root.sh
+RUN chmod 777 $SCRIPTS/entrypoint_user.sh && $HOME/venv/bin/pip install flask
 
 EXPOSE 5000
-ENTRYPOINT [ "/bin/sh", "/entrypoint_root.sh" ]
+
+ARG ENTRY=$SCRIPTS/entrypoint_root.sh
+ENTRYPOINT [ "/bin/sh", "/home/launcher/files/tools/scripts/entrypoint_root.sh" ]
