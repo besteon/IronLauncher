@@ -10,8 +10,6 @@ import networkx as nx
 
 FILE_HASHES = { }
 
-
-
 if __name__ == '__main__':
 
     romsFolder = sys.argv[1]

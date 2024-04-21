@@ -1,0 +1,17 @@
+Linux: requires pulseaudio and xorg
+
+docker run -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+    -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
+    -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
+    -v ~/.config/pulse/cookie:/root/.config/pulse/cookie \
+    --net=host -e APIKEY=asdf ironlauncher:0.1
+
+
+Windows: requires vcxsrv
+
+wsl podman run -e DISPLAY=192.168.0.19:0 \
+    --net=host -e APIKEY=asdf \
+    -e PULSE_SERVER=/mnt/wslg/PulseServer \
+    -v /mnt/wslg/:/mnt/wslg/ \
+    docker.io/besteon/ironlauncher:0.1

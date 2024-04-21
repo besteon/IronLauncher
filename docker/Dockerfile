@@ -54,7 +54,8 @@ RUN apt-get update && \
         python3.10-venv \
         libcairo2-dev \
         curl \
-        xdelta3
+        xdelta3 \
+        pulseaudio
 
 ADD files $HOME/files
 
@@ -68,6 +69,7 @@ WORKDIR $HOME
 # Install Bizhawk & Ironmon-Tracker & Randomizer & Extensions
 RUN mkdir -p $HOME/.local/share/fonts && mv $TRACKER/Franklin\ Gothic\ Medium\ Regular.ttf $HOME/.local/share/fonts && fc-cache -f && \
   python3 -m venv venv && \
+  echo '[general]\ndrivers = pulse' >> ~/.alsoftrc && \
   mkdir /home/$USER/BizHawk && unzip $BIZHAWK_FILES/BizHawk_devbuild_45e2307a.zip && \
   tar -xvf BizHawk_devbuild_45e2307a.tar -C BizHawk && \
   chmod +x BizHawk/EmuHawkMono.sh && \
