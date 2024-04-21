@@ -15,3 +15,10 @@ wsl podman run -e DISPLAY=192.168.0.19:0 \
     -e PULSE_SERVER=/mnt/wslg/PulseServer \
     -v /mnt/wslg/:/mnt/wslg/ \
     docker.io/besteon/ironlauncher:0.1
+
+https://github.com/containers/podman/releases/download/v5.0.2/podman-5.0.2-setup.exe
+https://github.com/marchaesen/vcxsrv/releases/download/21.1.10/vcxsrv-64.21.1.10.0.installer.exe
+
+podman-5.0.2-setup.exe /install /passive /quiet
+
+unzip vcxsrv-64.21.1.10.0.installer.exe

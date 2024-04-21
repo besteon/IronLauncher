@@ -7,10 +7,40 @@ import os
 import sys
 import hashlib
 import requests
+import subprocess
 
 SUPPORTED_HASHES = {
     'dd5945db9b930750cb39d00c84da8571feebf417': 'Pokemon Fire Red v1.1'
 }
+
+class InstallWindow(QMainWindow):
+    def __init__(self):
+        super(InstallWindow, self).__init__()
+
+        self.setWindowTitle("Iron Launcher Installer")
+
+        layout = QVBoxLayout()
+
+        loader = QUiLoader()
+        file = QFile("installer.ui")
+        file.open(QFile.ReadOnly)
+        self.myWidget = loader.load(file, self)
+        file.close()
+
+        layout.addWidget(self.myWidget)
+
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
+    def install(self):
+        pass
+
+    def installWindows(self):
+        pass
+
+    def installLinux(self):
+        pass
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -71,6 +101,7 @@ class MainWindow(QMainWindow):
             if self.myWidget.romsList.currentItem().text():
                 romFile = self.launcher['roms'][self.myWidget.romsList.currentItem().text()]
                 print(romFile)
+
 
         return
 

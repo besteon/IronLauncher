@@ -6,7 +6,7 @@ ENV DEBCONF_NONINTERACTIVE_SEEN=true
 ENV XKB_DEFAULT_RULES=base
 
 ENV USER=launcher
-ARG HOME=/home/$USER
+ENV HOME=/home/$USER
 ARG BIZHAWK_FILES=$HOME/files/bizhawk
 ARG PATCHES=$HOME/files/PATCHES
 ARG TRACKER=$HOME/files/ironmon-tracker
@@ -55,11 +55,12 @@ RUN apt-get update && \
         libcairo2-dev \
         curl \
         xdelta3 \
-        pulseaudio
+        pulseaudio \
+        chromium-browser
 
 ADD files $HOME/files
 
-RUN useradd -ms /bin/bash $USER && chown -R $USER $HOME && \
+RUN useradd -ms /bin/bash $USER && chown -R $USER $HOME && mkdir /roms && chown $USER /roms && \
   wget https://github.com/btimofeev/lazy_ips/archive/refs/heads/master.zip && \
   unzip master.zip && cd lazy_ips-master && python3 setup.py install
 
@@ -93,9 +94,6 @@ RUN mkdir -p $HOME/.local/share/fonts && mv $TRACKER/Franklin\ Gothic\ Medium\ R
   unzip AutoPokemonThemes_v1.2.zip -d $HOME/BizHawk/Lua/Ironmon-Tracker/extensions/ && \
   mv $BIZHAWK_FILES/config.ini $HOME/BizHawk/ && \
   mv $TRACKER/Settings.ini $HOME/BizHawk/Lua/Ironmon-Tracker/
-
-# This will not be present in the final build
-COPY roms $HOME/roms
 
 USER root
 RUN chmod 777 $SCRIPTS/entrypoint_user.sh && $HOME/venv/bin/pip install flask
