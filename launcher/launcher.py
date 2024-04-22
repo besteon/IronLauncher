@@ -6,8 +6,14 @@ from PySide6.QtUiTools import QUiLoader
 import os
 import sys
 import hashlib
+import socket
+from shutil import which
 import requests
 import subprocess
+
+BASEDIR = os.path.dirname(__file__)
+
+APIKEY = "asdf"
 
 SUPPORTED_HASHES = {
     'dd5945db9b930750cb39d00c84da8571feebf417': 'Pokemon Fire Red v1.1'
@@ -22,7 +28,7 @@ class InstallWindow(QMainWindow):
         layout = QVBoxLayout()
 
         loader = QUiLoader()
-        file = QFile("installer.ui")
+        file = QFile(os.path.join(BASEDIR, "installer.ui"))
         file.open(QFile.ReadOnly)
         self.myWidget = loader.load(file, self)
         file.close()
@@ -34,7 +40,13 @@ class InstallWindow(QMainWindow):
         self.setCentralWidget(widget)
 
     def install(self):
-        pass
+        if os.name == 'nt': # Windows
+            pass
+        elif os.name == 'posix': # Linux
+            pass
+        else:
+            print('Unsupported Operating System.')
+
 
     def installWindows(self):
         pass
@@ -51,7 +63,7 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout()
 
         loader = QUiLoader()
-        file = QFile("mainwindow.ui")
+        file = QFile(os.path.join(BASEDIR, "mainwindow.ui"))
         file.open(QFile.ReadOnly)
         self.myWidget = loader.load(file, self)
         file.close()
@@ -101,14 +113,76 @@ class MainWindow(QMainWindow):
             if self.myWidget.romsList.currentItem().text():
                 romFile = self.launcher['roms'][self.myWidget.romsList.currentItem().text()]
                 print(romFile)
-
-
+                
+                self.startContainer()
         return
+
+    def startContainer(self):
+        if os.name == 'nt':
+            subprocess.Popen(f"{BASEDIR}/vcxsrv/xlaunch.exe -run {BASEDIR}/vcxsrv/config.xlaunch".split())
+
+            path = self.myWidget.romsLineEdit.text()
+            roms_path = os.popen(f'wsl wslpath -a "{path}"').read()
+            ip = socket.gethostbyname(socket.gethostname())
+            cmd = f'''
+                wsl podman run \
+                -e APIKEY={APIKEY} \
+                -e DISPLAY={ip}:0 \
+                -e PULSE_SERVER=/mnt/wslg/PulseServer \
+                -v /mnt/wslg/:/mnt/wslg/ \
+                -v {roms_path}:/roms \
+                --net=host
+                docker.io/besteon/ironlauncher:latest
+            '''
+            proc = subprocess.Popen(cmd.split())
+        elif os.name == 'posix':
+            roms_path = self.myWidget.romsLineEdit.text()
+            cmd = f'''
+                podman run \
+                -e APIKEY={APIKEY} \
+                -e DISPLAY=$DISPLAY \
+                -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
+                -v $XDG_RUNTIME_DIR/pulse/native:$XDG_RUNTIME_DIR/pulse/native \
+                -v ~/.config/pulse/cookie:/root/.config/pulse/cookie \
+                -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+                -v {roms_path}:/roms \
+                --net=host \
+                docker.io/besteon/ironlauncher:latest
+            '''
+            proc = subprocess.Popen(cmd.split())
+
+def depsInstalled():        
+    if os.name == 'nt': # Windows
+        if which('podman') is not None:
+            return True
+        else:
+            return False
+    elif os.name == 'posix': # Linux
+        if which('podman') is not None and which('pulseaudio') is not None and os.environ['DISPLAY'] is not None:
+            return True
+        else:
+            return False
+
+def installDeps():
+    if os.name == 'nt':
+        os.system('powershell -c "wget https://github.com/containers/podman/releases/download/v5.0.2/podman-5.0.2-setup.exe; podman-5.0.2-setup.exe /install /passive /quiet; rm podman-5.0.2-setup.exe"')
+    elif os.name == 'posix':
+        os.system('sudo -A apt install -y podman pulseaudio xwayland && Xwayland')
+
+def updateContainer():
+    cmd = f'podman pull docker.io/besteon/ironlauncher:latest'
+    if os.name == 'nt':
+        cmd = 'wsl ' + cmd
+    os.system(cmd)
+
+if not depsInstalled():
+    installDeps()
+
+updateContainer()
 
 app = QApplication(sys.argv)
 mainwindow = MainWindow()
 mainwindow.setFixedWidth(600)
 mainwindow.setFixedHeight(480)
-#mainwindow.setWindowFlags(Qt.FramelessWindowHint)
 mainwindow.show()
 sys.exit(app.exec())

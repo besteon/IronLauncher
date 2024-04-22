@@ -103,6 +103,13 @@
                   </widget>
                  </item>
                  <item>
+                  <widget class="QRadioButton" name="ultimateModeRadioButton">
+                   <property name="text">
+                    <string>Ultimate</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
                   <widget class="QRadioButton" name="radioButton_4">
                    <property name="text">
                     <string>Kaizo</string>
