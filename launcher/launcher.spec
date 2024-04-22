@@ -5,7 +5,7 @@ a = Analysis(
     ['launcher.py'],
     pathex=[],
     binaries=[],
-    datas=[('vcxsrv', 'vcxsrv'), ('mainwindow.ui', '.', 'installer.ui', '.'), ('ironmon.png', '.')],
+    datas=[('vcxsrv', 'vcxsrv'), ('mainwindow.ui', '.'), ('installer.ui', '.'), ('ironmon.png', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

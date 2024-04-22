@@ -22,3 +22,7 @@ https://github.com/marchaesen/vcxsrv/releases/download/21.1.10/vcxsrv-64.21.1.10
 podman-5.0.2-setup.exe /install /passive /quiet
 
 unzip vcxsrv-64.21.1.10.0.installer.exe
+
+Fix linux audio issue:
+sudo apt-get update && sudo apt-get remove --purge alsa-utils pulseaudio && sudo apt-get install alsa-utils pulseaudio && sudo alsa force-reload
+(restart)

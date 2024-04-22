@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QVBoxLayout, QApplication, QListWidget, QListWidgetItem, QWidget, QFileDialog, QStackedWidget, QMainWindow
 from PySide6.QtCore import QFile, Qt, QSize
-from PySide6.QtGui import QPalette
+from PySide6.QtGui import QPalette, QPixmap
 from PySide6.QtUiTools import QUiLoader
 
 import os
@@ -8,8 +8,9 @@ import sys
 import hashlib
 import socket
 from shutil import which
-import requests
 import subprocess
+import psutil
+import time
 
 BASEDIR = os.path.dirname(__file__)
 
@@ -33,6 +34,7 @@ class InstallWindow(QMainWindow):
         self.myWidget = loader.load(file, self)
         file.close()
 
+        self.myWidget.installButton.clicked.connect(self.install)
         layout.addWidget(self.myWidget)
 
         widget = QWidget()
@@ -40,19 +42,13 @@ class InstallWindow(QMainWindow):
         self.setCentralWidget(widget)
 
     def install(self):
-        if os.name == 'nt': # Windows
-            pass
-        elif os.name == 'posix': # Linux
-            pass
-        else:
-            print('Unsupported Operating System.')
+        if os.name == 'nt':
+            os.system('powershell -c "wget https://github.com/containers/podman/releases/download/v5.0.2/podman-5.0.2-setup.exe; podman-5.0.2-setup.exe /install /passive /quiet; rm podman-5.0.2-setup.exe"')
+        elif os.name == 'posix':
+            os.system('SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt install -y podman pulseaudio xwayland && Xwayland')
 
-
-    def installWindows(self):
-        pass
-
-    def installLinux(self):
-        pass
+        MainWindow().show()
+        self.destroy()
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -67,6 +63,9 @@ class MainWindow(QMainWindow):
         file.open(QFile.ReadOnly)
         self.myWidget = loader.load(file, self)
         file.close()
+
+        ironmonImg = QPixmap(os.path.join(BASEDIR, "ironmon.png"))
+        self.myWidget.ironmonImgLabel.setPixmap(ironmonImg)
 
         self.myWidget.romsButton.clicked.connect(self.browseFiles)
         self.myWidget.romsLineEdit.textChanged.connect(self.updateRomsText)
@@ -115,11 +114,25 @@ class MainWindow(QMainWindow):
                 print(romFile)
                 
                 self.startContainer()
-        return
+                self.close()
+
+                healthcmd = 'podman ps'
+                if os.name == 'nt':
+                    healthcmd = 'wsl ' + healthcmd
+                
+                # Wait for the container to start up
+                while 'ironlauncher' not in os.popen(healthcmd).read():
+                    time.sleep(1.0)
+                
+                # Wait for the container to stop
+                while 'ironlauncher' in os.popen(healthcmd).read():
+                    time.sleep(1.0)
+                self.show()
 
     def startContainer(self):
         if os.name == 'nt':
-            subprocess.Popen(f"{BASEDIR}/vcxsrv/xlaunch.exe -run {BASEDIR}/vcxsrv/config.xlaunch".split())
+            if 'vcxsrv' not in (p.name() for p in psutil.process_iter()):
+                subprocess.Popen(f"{BASEDIR}/vcxsrv/xlaunch.exe -run {BASEDIR}/vcxsrv/config.xlaunch".split())
 
             path = self.myWidget.romsLineEdit.text()
             roms_path = os.popen(f'wsl wslpath -a "{path}"').read()
@@ -137,13 +150,17 @@ class MainWindow(QMainWindow):
             proc = subprocess.Popen(cmd.split())
         elif os.name == 'posix':
             roms_path = self.myWidget.romsLineEdit.text()
+            display = os.environ['DISPLAY']
+            xdg = os.environ['XDG_RUNTIME_DIR']
+            home = os.path.expanduser('~')
+            os.system('xhost +')
             cmd = f'''
                 podman run \
                 -e APIKEY={APIKEY} \
-                -e DISPLAY=$DISPLAY \
-                -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
-                -v $XDG_RUNTIME_DIR/pulse/native:$XDG_RUNTIME_DIR/pulse/native \
-                -v ~/.config/pulse/cookie:/root/.config/pulse/cookie \
+                -e DISPLAY={display} \
+                -e PULSE_SERVER=unix:{xdg}/pulse/native \
+                -v {xdg}/pulse/native:{xdg}/pulse/native \
+                -v {home}/.config/pulse/cookie:/root/.config/pulse/cookie \
                 -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
                 -v {roms_path}:/roms \
                 --net=host \
@@ -163,26 +180,16 @@ def depsInstalled():
         else:
             return False
 
-def installDeps():
-    if os.name == 'nt':
-        os.system('powershell -c "wget https://github.com/containers/podman/releases/download/v5.0.2/podman-5.0.2-setup.exe; podman-5.0.2-setup.exe /install /passive /quiet; rm podman-5.0.2-setup.exe"')
-    elif os.name == 'posix':
-        os.system('sudo -A apt install -y podman pulseaudio xwayland && Xwayland')
-
 def updateContainer():
     cmd = f'podman pull docker.io/besteon/ironlauncher:latest'
     if os.name == 'nt':
         cmd = 'wsl ' + cmd
     os.system(cmd)
 
-if not depsInstalled():
-    installDeps()
-
-updateContainer()
 
 app = QApplication(sys.argv)
-mainwindow = MainWindow()
-mainwindow.setFixedWidth(600)
-mainwindow.setFixedHeight(480)
-mainwindow.show()
+window = MainWindow() if depsInstalled() else InstallWindow()
+window.setFixedWidth(600)
+window.setFixedHeight(480)
+window.show()
 sys.exit(app.exec())
