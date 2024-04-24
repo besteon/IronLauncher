@@ -19,11 +19,10 @@
   function areDepsInstalled(){
     console.log('test')
     AreDepsInstalled().then(result => {
-      console.log(result)
       if (result == true) {
         window.location.hash = '#launcher'
       } else {
-        window.location.hash = '#installer'
+        window.location.hash = '#initialize'
       }
     })
   }

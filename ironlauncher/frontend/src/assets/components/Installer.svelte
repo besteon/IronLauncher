@@ -1,13 +1,19 @@
 <script>
 	import ironlogo from '../images/iron.png'
     import launcherlogo from '../images/launcher.png'
-    import {InstallDependencies} from '../../../wailsjs/go/main/App.js'
+    import {AreDepsInstalled, InstallDependencies} from '../../../wailsjs/go/main/App.js'
 
 	function installDeps() {
 		InstallDependencies().then(result => {
-            if (result) {
-                window.location.hash = '#launcher'
-            }
+            (function wait_for_install() {
+                AreDepsInstalled().then(result => {
+                    if (result) {
+                        window.location.hash = '#launcher'
+                    } else {
+                        setTimeout(wait_for_install, 1000)
+                    }
+                })
+            })()
         })
 	}
 </script>

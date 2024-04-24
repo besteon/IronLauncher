@@ -2,7 +2,7 @@
     import ironlogo from '../images/iron.png'
     import launcherlogo from '../images/launcher.png'
     import {WindowHide, WindowShow, EventsOn} from '../../../wailsjs/runtime/runtime.js'
-    import {StartUp, GetRomsFolder, GetRoms, Play} from '../../../wailsjs/go/main/App.js'
+    import {GetRomsFolder, GetRoms, Play} from '../../../wailsjs/go/main/App.js'
 
 	let romsFolder = "";
     let roms = [];
@@ -33,8 +33,9 @@
         })
     }
 
-    StartUp()
-    EventsOn("BIZHAWK_CLOSED", WindowShow)
+    EventsOn("EMULATOR_CLOSED", function() {
+        WindowShow()
+    })
 </script>
 
 <main>

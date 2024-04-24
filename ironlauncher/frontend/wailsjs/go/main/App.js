@@ -22,6 +22,14 @@ export function Play(arg1, arg2) {
   return window['go']['main']['App']['Play'](arg1, arg2);
 }
 
+export function PollEmulator() {
+  return window['go']['main']['App']['PollEmulator']();
+}
+
+export function StartContainer(arg1) {
+  return window['go']['main']['App']['StartContainer'](arg1);
+}
+
 export function StartUp() {
   return window['go']['main']['App']['StartUp']();
 }

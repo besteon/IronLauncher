@@ -11,8 +11,8 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
-	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/shirou/gopsutil/v3/host"
 	"github.com/wailsapp/wails/v2/pkg/runtime"
@@ -56,11 +56,13 @@ func (a *App) AreDepsInstalled() bool {
 	return false
 }
 
-func (a *App) StartUp() {
+func (a *App) StartUp() bool {
 	hostinfo, _ := host.Info()
 	if hostinfo.OS == "windows" {
 		InitWindowsPodman()
 	}
+
+	return true
 }
 
 func InitWindowsPodman() {
@@ -154,7 +156,7 @@ func (a *App) InstallDependencies() bool {
 }
 
 func (a *App) Play(romsFolder string, rom string) {
-	StartContainer(romsFolder)
+	a.StartContainer(romsFolder)
 }
 
 func (a *App) UpdateContainer() {
@@ -169,7 +171,7 @@ func (a *App) UpdateContainer() {
 	cmd.Run()
 }
 
-func StartContainer(path string) {
+func (a *App) StartContainer(path string) {
 	hostinfo, _ := host.Info()
 	if hostinfo.OS == "windows" {
 		cmdStr := []string{}
@@ -206,6 +208,24 @@ func StartContainer(path string) {
 	}
 
 	fmt.Println("StartContainer complete")
+	go a.PollEmulator()
+}
+
+func (a *App) PollEmulator() {
+	time.Sleep(5 * time.Second)
+	for {
+		cmdStr := strings.Fields("podman ps")
+		out, err := exec.Command(cmdStr[0], cmdStr[1:]...).Output()
+		fmt.Printf("%s", out)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+		if !strings.Contains(string(out), "ironlauncher") {
+			runtime.EventsEmit(a.ctx, "EMULATOR_CLOSED")
+			return
+		}
+		time.Sleep(1 * time.Second)
+	}
 }
 
 func GetOutboundIP() net.IP {
@@ -218,27 +238,4 @@ func GetOutboundIP() net.IP {
 	localAddr := conn.LocalAddr().(*net.UDPAddr)
 
 	return localAddr.IP
-}
-
-func downloadFile(filePath string) error {
-	resp, err := http.Get(filePath)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-
-	name := filepath.Base(filePath)
-
-	file, err := os.Create(name)
-	if err != nil {
-		return err
-	}
-	defer file.Close()
-
-	size, err := io.Copy(file, resp.Body)
-	if err != nil {
-		return err
-	}
-	fmt.Println(name, size, resp.Status)
-	return nil
 }

@@ -11,6 +11,10 @@ export function InstallDependencies():Promise<boolean>;
 
 export function Play(arg1:string,arg2:string):Promise<void>;
 
-export function StartUp():Promise<void>;
+export function PollEmulator():Promise<void>;
+
+export function StartContainer(arg1:string):Promise<void>;
+
+export function StartUp():Promise<boolean>;
 
 export function UpdateContainer():Promise<void>;

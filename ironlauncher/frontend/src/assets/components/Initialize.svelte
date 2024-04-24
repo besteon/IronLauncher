@@ -1,9 +1,18 @@
 <script>
 	import ironlogo from '../images/iron.png'
     import launcherlogo from '../images/launcher.png'
-    import {} from '../../../wailsjs/go/main/App.js'
+    import {StartUp} from '../../../wailsjs/go/main/App.js'
 
-	
+    (function wait_for_install() {
+        StartUp().then(result => {
+            console.log(result)
+            if (result) {
+                window.location.hash = '#launcher'
+            } else {
+                setTimeout(wait_for_install, 1000)
+            }
+        })
+    })()
 </script>
 
 <main>
