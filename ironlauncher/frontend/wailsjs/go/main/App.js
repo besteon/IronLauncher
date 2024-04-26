@@ -14,6 +14,10 @@ export function GetRomsFolder() {
   return window['go']['main']['App']['GetRomsFolder']();
 }
 
+export function GetSettings() {
+  return window['go']['main']['App']['GetSettings']();
+}
+
 export function InstallDependencies() {
   return window['go']['main']['App']['InstallDependencies']();
 }
@@ -24,6 +28,10 @@ export function Play(arg1, arg2) {
 
 export function PollEmulator() {
   return window['go']['main']['App']['PollEmulator']();
+}
+
+export function SaveDefaults(arg1, arg2, arg3) {
+  return window['go']['main']['App']['SaveDefaults'](arg1, arg2, arg3);
 }
 
 export function StartContainer(arg1) {

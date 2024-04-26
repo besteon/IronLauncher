@@ -16,6 +16,7 @@ import (
 
 	"github.com/shirou/gopsutil/v3/host"
 	"github.com/wailsapp/wails/v2/pkg/runtime"
+	"gopkg.in/ini.v1"
 )
 
 var SUPPORTED_HASHES = map[string]string{
@@ -23,6 +24,15 @@ var SUPPORTED_HASHES = map[string]string{
 }
 
 var APIKEY string = "asdf"
+var SETTINGS_FILE string = "ironlauncher.ini"
+
+type Settings struct {
+	RomsFolder  string `json:"romsFolder"`
+	DefaultRom  string `json:"defaultRom"`
+	DefaultMode string `json:"defaultMode"`
+}
+
+var settings Settings = Settings{}
 
 // App struct
 type App struct {
@@ -43,6 +53,20 @@ func Which(cmd string) bool {
 // so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
+
+	cfg, err := ini.Load(SETTINGS_FILE)
+	if err != nil {
+		fmt.Println(err.Error())
+		settings.RomsFolder = ""
+		settings.DefaultRom = ""
+		settings.DefaultMode = ""
+	} else {
+		fmt.Println("loading settings")
+		settings.RomsFolder = cfg.Section("settings").Key("romsFolder").String()
+		settings.DefaultRom = cfg.Section("settings").Key("defaultRom").String()
+		settings.DefaultMode = cfg.Section("settings").Key("defaultMode").String()
+	}
+
 }
 
 func (a *App) AreDepsInstalled() bool {
@@ -157,6 +181,24 @@ func (a *App) InstallDependencies() bool {
 
 func (a *App) Play(romsFolder string, rom string) {
 	a.StartContainer(romsFolder)
+}
+
+func (a *App) SaveDefaults(romsFolder string, game string, mode string) {
+	cfg := ini.Empty()
+	cfg.NewSection("settings")
+	cfg.Section("settings").NewKey("romsFolder", romsFolder)
+	cfg.Section("settings").NewKey("defaultRom", game)
+	cfg.Section("settings").NewKey("defaultMode", mode)
+	err := cfg.SaveTo(SETTINGS_FILE)
+
+	if err != nil {
+		fmt.Println(err.Error())
+	}
+}
+
+func (a *App) GetSettings() Settings {
+	fmt.Println(settings.RomsFolder)
+	return settings
 }
 
 func (a *App) UpdateContainer() {

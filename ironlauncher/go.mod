@@ -7,6 +7,7 @@ toolchain go1.22.2
 require (
 	github.com/shirou/gopsutil/v3 v3.24.3
 	github.com/wailsapp/wails/v2 v2.8.1
+	gopkg.in/ini.v1 v1.67.0
 )
 
 require (
