@@ -10,13 +10,15 @@ export function GetRomsFolder():Promise<string>;
 
 export function GetSettings():Promise<main.Settings>;
 
+export function InitFolderStructure():Promise<void>;
+
 export function InstallDependencies():Promise<boolean>;
 
 export function Play(arg1:string,arg2:string):Promise<void>;
 
 export function PollEmulator():Promise<void>;
 
-export function SaveDefaults(arg1:string,arg2:string,arg3:string):Promise<void>;
+export function SaveDefaults(arg1:string,arg2:string,arg3:string,arg4:string):Promise<void>;
 
 export function StartContainer(arg1:string):Promise<void>;
 

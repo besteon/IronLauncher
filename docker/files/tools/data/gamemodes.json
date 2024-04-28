@@ -1,0 +1,29 @@
+{
+    "dd5945db9b930750cb39d00c84da8571feebf417": {
+        "Game": "Pokemon Fire Red v1.1",
+        "System": "GBA",
+        "Modes": {
+            "Vanilla": {
+                "RomHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "QolHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "Randomizer": null,
+                "RandomizerSettings": null,
+                "Tracker": false
+            },
+            "Classic Randomizer": {
+                "RomHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "QolHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "Randomizer": "default",
+                "RandomizerSettings": null,
+                "Tracker": false
+            },
+            "Classic IronMon": {
+                "RomHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "QolHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "Randomizer": "default",
+                "RandomizerSettings": "FRLG Standard.rnqs",
+                "Tracker": true
+            }
+        }
+    }
+}

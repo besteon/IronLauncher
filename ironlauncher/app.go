@@ -19,17 +19,36 @@ import (
 	"gopkg.in/ini.v1"
 )
 
+type SuppportedMode struct {
+	Name               string
+	RomHash            string
+	Randomizer         string
+	RandomizerSettings string
+}
+
+type SupportedGame struct {
+	Name  string
+	Modes []SuppportedMode
+}
+
 var SUPPORTED_HASHES = map[string]string{
 	"dd5945db9b930750cb39d00c84da8571feebf417": "Pokemon Fire Red v1.1",
 }
 
-var APIKEY string = "asdf"
-var SETTINGS_FILE string = "ironlauncher.ini"
+var settings_file string = "ironlauncher.ini"
+var datapath string = ""
+var savespath string = ""
+var gbaSettingsPath string = ""
+var ndsSettingsPath string = ""
+
+// var CONTAINER string = "docker.io/besteon/ironlauncher:latest"
+var CONTAINER string = "ironlauncher:dev"
 
 type Settings struct {
 	RomsFolder  string `json:"romsFolder"`
 	DefaultRom  string `json:"defaultRom"`
 	DefaultMode string `json:"defaultMode"`
+	QolPatches  string `json:"qolPatches"`
 }
 
 var settings Settings = Settings{}
@@ -54,7 +73,9 @@ func Which(cmd string) bool {
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 
-	cfg, err := ini.Load(SETTINGS_FILE)
+	a.InitFolderStructure()
+
+	cfg, err := ini.Load(settings_file)
 	if err != nil {
 		fmt.Println(err.Error())
 		settings.RomsFolder = ""
@@ -65,6 +86,97 @@ func (a *App) startup(ctx context.Context) {
 		settings.RomsFolder = cfg.Section("settings").Key("romsFolder").String()
 		settings.DefaultRom = cfg.Section("settings").Key("defaultRom").String()
 		settings.DefaultMode = cfg.Section("settings").Key("defaultMode").String()
+		settings.QolPatches = cfg.Section("settings").Key("qolPatches").String()
+	}
+
+}
+
+func (a *App) InitFolderStructure() {
+	hostinfo, _ := host.Info()
+
+	if hostinfo.OS == "windows" {
+		appdata := os.Getenv("APPDATA")
+		appdata += "\\ironlauncher.exe"
+
+		err := os.MkdirAll(appdata, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		datapath = appdata + "\\data"
+		err = os.MkdirAll(datapath, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		savespath = datapath + "\\saves"
+		err = os.MkdirAll(savespath, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		gbaSettingsPath = datapath + "\\gba"
+		err = os.MkdirAll(gbaSettingsPath, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		ndsSettingsPath = datapath + "\\nds"
+		err = os.MkdirAll(ndsSettingsPath, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		file, _ := os.OpenFile(datapath+"\\config.ini", os.O_RDONLY|os.O_CREATE, 0644)
+		file.Close()
+		file, _ = os.OpenFile(gbaSettingsPath+"\\Settings.ini", os.O_RDONLY|os.O_CREATE, 0644)
+		file.Close()
+		file, _ = os.OpenFile(ndsSettingsPath+"\\Settings.ini", os.O_RDONLY|os.O_CREATE, 0644)
+		file.Close()
+
+		settings_file = datapath + "\\ironlauncher.ini"
+
+	} else if hostinfo.OS == "linux" {
+		appdata, _ := os.UserHomeDir()
+		appdata += "/.local/share/ironlauncher"
+
+		err := os.MkdirAll(appdata, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		datapath = appdata + "/data"
+		err = os.MkdirAll(datapath, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		savespath = datapath + "/saves"
+		err = os.MkdirAll(savespath, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		gbaSettingsPath = datapath + "/gba"
+		err = os.MkdirAll(datapath, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		ndsSettingsPath = datapath + "/nds"
+		err = os.MkdirAll(datapath, os.ModePerm)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		file, _ := os.OpenFile(datapath+"/config.ini", os.O_RDONLY|os.O_CREATE, 0644)
+		file.Close()
+		file, _ = os.OpenFile(gbaSettingsPath+"/Settings.ini", os.O_RDONLY|os.O_CREATE, 0644)
+		file.Close()
+		file, _ = os.OpenFile(ndsSettingsPath+"/Settings.ini", os.O_RDONLY|os.O_CREATE, 0644)
+		file.Close()
+
+		settings_file = datapath + "/ironlauncher.ini"
 	}
 
 }
@@ -130,10 +242,10 @@ func (a *App) GetRoms(path string) []string {
 				}
 
 				hash := hex.EncodeToString(h.Sum(nil))
-				name, exists := SUPPORTED_HASHES[hash]
+				_, exists := SUPPORTED_HASHES[hash]
 
 				if exists {
-					roms = append(roms, name)
+					roms = append(roms, item.Name())
 				}
 			}
 		}
@@ -183,13 +295,14 @@ func (a *App) Play(romsFolder string, rom string) {
 	a.StartContainer(romsFolder)
 }
 
-func (a *App) SaveDefaults(romsFolder string, game string, mode string) {
+func (a *App) SaveDefaults(romsFolder string, game string, mode string, qolPatches string) {
 	cfg := ini.Empty()
 	cfg.NewSection("settings")
 	cfg.Section("settings").NewKey("romsFolder", romsFolder)
 	cfg.Section("settings").NewKey("defaultRom", game)
 	cfg.Section("settings").NewKey("defaultMode", mode)
-	err := cfg.SaveTo(SETTINGS_FILE)
+	cfg.Section("settings").NewKey("qolPatches", qolPatches)
+	err := cfg.SaveTo(settings_file)
 
 	if err != nil {
 		fmt.Println(err.Error())
@@ -197,7 +310,6 @@ func (a *App) SaveDefaults(romsFolder string, game string, mode string) {
 }
 
 func (a *App) GetSettings() Settings {
-	fmt.Println(settings.RomsFolder)
 	return settings
 }
 
@@ -216,16 +328,48 @@ func (a *App) UpdateContainer() {
 func (a *App) StartContainer(path string) {
 	hostinfo, _ := host.Info()
 	if hostinfo.OS == "windows" {
-		cmdStr := []string{}
+
 		if strings.Contains(hostinfo.Platform, "Windows 10") {
 			ip := GetOutboundIP()
-			cmdStr = strings.Fields(fmt.Sprintf("wsl podman run -e 'APIKEY=%s' -e 'DISPLAY=%s:0' -e 'PULSE_SERVER=/mnt/wslg/PulseServer' -v '/mnt/wslg/:/mnt/wslg/' -v '%s:/roms' --net=host docker.io/besteon/ironlauncher:latest", APIKEY, ip, path))
+			cmdStr := strings.Fields(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
+			-e 'DISPLAY=%s:0' 
+			-e 'PULSE_SERVER=/mnt/wslg/PulseServer' 
+			-v '/mnt/wslg/:/mnt/wslg/' 
+			-v '%s:/roms'
+			-v '%s:/data/saves'
+			-v '%s\config.ini:/home/launcher/BizHawk/config.ini'
+			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/gba/Ironmon-Tracker/Settings.ini'
+			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/nds/Ironmon-Tracker/Settings.ini'
+			-v '%s:/home/launcher/ironlauncher.ini'
+			--net=host 
+			%s`, ip, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER))
 			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
-			cmd.Start()
+			err := cmd.Start()
+
+			if err != nil {
+				fmt.Println(err.Error())
+			}
 		} else if strings.Contains(hostinfo.Platform, "Windows 11") {
-			cmdStr = strings.Fields(fmt.Sprintf("wsl podman run -e 'APIKEY=%s' -e 'DISPLAY=:0' -e 'PULSE_SERVER=/mnt/wslg/PulseServer' -e 'WAYLAND_DISPLAY=wayland-0' -v '/mnt/wslg/:/mnt/wslg/' -v '/mnt/wslg/.X11-unix:/tmp/.X11-unix' -v '%s:/roms' --net=host docker.io/besteon/ironlauncher:latest", APIKEY, path))
+			cmdStr := strings.Fields(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
+			-e 'DISPLAY=:0' 
+			-e 'PULSE_SERVER=/mnt/wslg/PulseServer' 
+			-e 'WAYLAND_DISPLAY=wayland-0' 
+			-v '/mnt/wslg/:/mnt/wslg/' 
+			-v '/mnt/wslg/.X11-unix:/tmp/.X11-unix' 
+			-v '%s:/roms'
+			-v '%s:/data/saves'
+			-v '%s\config.ini:/home/launcher/BizHawk/config.ini'
+			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/gba/Ironmon-Tracker/Settings.ini'
+			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/nds/Ironmon-Tracker/Settings.ini'
+			-v '%s:/home/launcher/ironlauncher.ini'
+			--net=host 
+			%s`, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER))
 			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
-			cmd.Start()
+			err := cmd.Start()
+
+			if err != nil {
+				fmt.Println(err.Error())
+			}
 		}
 
 	} else if hostinfo.OS == "linux" {
@@ -236,15 +380,19 @@ func (a *App) StartContainer(path string) {
 		xhost.Start()
 
 		cmdStr := strings.Fields(fmt.Sprintf(`podman run
-			-e APIKEY=%s
 			-e DISPLAY=%s
 			-e PULSE_SERVER=unix:%s/pulse/native
 			-v %s/pulse/native:%s/pulse/native
 			-v %s/.config/pulse/cookie:/root/.config/pulse/cookie
 			-v /tmp/.X11-unix:/tmp/.X11-unix:ro
-			-v %s:/roms
+			-v '%s:/roms'
+			-v '%s:/data/saves'
+			-v '%s/config.ini:/home/launcher/BizHawk/config.ini'
+			-v '%s/Settings.ini:/home/launcher/BizHawk/Lua/gba/Ironmon-Tracker/Settings.ini'
+			-v '%s/Settings.ini:/home/launcher/BizHawk/Lua/nds/Ironmon-Tracker/Settings.ini'
+			-v '%s:/home/launcher/ironlauncher.ini'
 			--net=host
-			docker.io/besteon/ironlauncher:latest`, APIKEY, display, xdg, xdg, xdg, home, path))
+			%s`, display, xdg, xdg, xdg, home, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER))
 		cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
 		cmd.Start()
 	}
@@ -254,11 +402,23 @@ func (a *App) StartContainer(path string) {
 }
 
 func (a *App) PollEmulator() {
-	time.Sleep(5 * time.Second)
-	for {
+	containerRunning := false
+	for !containerRunning {
 		cmdStr := strings.Fields("podman ps")
 		out, err := exec.Command(cmdStr[0], cmdStr[1:]...).Output()
 		fmt.Printf("%s", out)
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+		if strings.Contains(string(out), "ironlauncher") {
+			runtime.EventsEmit(a.ctx, "EMULATOR_OPEN")
+			containerRunning = true
+		}
+		time.Sleep(1 * time.Second)
+	}
+	for {
+		cmdStr := strings.Fields("podman ps")
+		out, err := exec.Command(cmdStr[0], cmdStr[1:]...).Output()
 		if err != nil {
 			fmt.Println(err.Error())
 		}

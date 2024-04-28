@@ -18,6 +18,10 @@ export function GetSettings() {
   return window['go']['main']['App']['GetSettings']();
 }
 
+export function InitFolderStructure() {
+  return window['go']['main']['App']['InitFolderStructure']();
+}
+
 export function InstallDependencies() {
   return window['go']['main']['App']['InstallDependencies']();
 }
@@ -30,8 +34,8 @@ export function PollEmulator() {
   return window['go']['main']['App']['PollEmulator']();
 }
 
-export function SaveDefaults(arg1, arg2, arg3) {
-  return window['go']['main']['App']['SaveDefaults'](arg1, arg2, arg3);
+export function SaveDefaults(arg1, arg2, arg3, arg4) {
+  return window['go']['main']['App']['SaveDefaults'](arg1, arg2, arg3, arg4);
 }
 
 export function StartContainer(arg1) {

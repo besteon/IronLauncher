@@ -9,6 +9,7 @@
 	let romsFolder = "";
     let selectedRom = "-- GAME --";
     let selectedMode = "Vanilla";
+    let qolPatches = "false";
     let roms = [];
 
     let modes = [
@@ -20,12 +21,6 @@
         { value: "Survival IronMon" },
         { value: "Kaizo IronMon" },
         { value: "Super Kaizo IronMon" },
-    ];
-
-    let settings = [
-        { value: "Setting 1" },
-        { value: "Setting 2" },
-        { value: "Setting 3" },
     ];
 
     function getRomsFolder() {
@@ -48,7 +43,7 @@
                 selectedRom = roms[0].value
             }
 
-            savedefaults()
+            updatesettings()
         })
     }
 
@@ -58,12 +53,16 @@
         })
     }
 
-    function savedefaults() {
-        SaveDefaults(romsFolder, selectedRom, selectedMode)
+    function updatesettings() {
+        SaveDefaults(romsFolder, selectedRom, selectedMode, qolPatches.toString())
     }
 
     EventsOn("EMULATOR_CLOSED", function() {
         WindowShow()
+    })
+
+    EventsOn("EMULATOR_OPEN", function() {
+        WindowHide()
     })
 
     GetSettings().then(result => {
@@ -89,7 +88,7 @@
                 <div id="romsSection"> 
                     <div class="flex items-center space-x-2">
                         <Label for="romsSection" >Game:</Label>
-                        <select bind:value={selectedRom} on:change={savedefaults}>
+                        <select bind:value={selectedRom} on:change={updatesettings}>
                             <option disabled value="-- GAME --">-- GAME --</option>
                             {#each roms as rom}
                                 <option value={rom.value}>{rom.value}</option>
@@ -101,7 +100,7 @@
                 <div class="padding"></div>
                 <div id="modeSection">
                     <Label for="modeSection" >Mode:</Label>
-                    <select bind:value={selectedMode} on:change={savedefaults} >
+                    <select bind:value={selectedMode} on:change={updatesettings} >
                         {#each modes as mode}
                             <option value={mode.value}>{mode.value}</option>
                         {/each}
@@ -110,12 +109,10 @@
             </div>
             <div id="settingsSection">
                 <Label for="settingsSection" >Settings</Label>
-                {#each settings as setting}
-                    <div class="flex items-center space-x-2">
-                        <Checkbox id="settingSelect" />
-                        <Label for="settingSelect" ><div contenteditable="true" bind:innerText={setting.value}></div></Label>
-                    </div>
-                {/each}
+                <div class="flex items-center space-x-2">
+                    <input type='checkbox' bind:checked={qolPatches} on:change={updatesettings}/>
+                    <Label for="qolPatches" ><div>Quality of Life Patches</div></Label>
+                </div>
             </div>
         </div>
         <div class="padding"></div>

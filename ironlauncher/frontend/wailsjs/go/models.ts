@@ -4,6 +4,7 @@ export namespace main {
 	    romsFolder: string;
 	    defaultRom: string;
 	    defaultMode: string;
+	    qolPatches: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new Settings(source);
@@ -14,6 +15,7 @@ export namespace main {
 	        this.romsFolder = source["romsFolder"];
 	        this.defaultRom = source["defaultRom"];
 	        this.defaultMode = source["defaultMode"];
+	        this.qolPatches = source["qolPatches"];
 	    }
 	}
 

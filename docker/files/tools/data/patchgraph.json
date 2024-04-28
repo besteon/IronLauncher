@@ -1,0 +1,92 @@
+[
+  {
+    "root_rom": true,
+    "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
+    "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
+    "new": "44bb12cd9fda56da4489c9e8eb4de27ed41609f1"
+  },
+  {
+    "root_rom": false,
+    "orig": "44bb12cd9fda56da4489c9e8eb4de27ed41609f1",
+    "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
+    "new": "fa3d2612c16c3c304b36182d64c0530c946de253"
+  },
+  {
+    "root_rom": false,
+    "orig": "fa3d2612c16c3c304b36182d64c0530c946de253",
+    "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
+    "new": "1749a885c58ad94b202febf09b1f430e2a6dd2aa"
+  },
+  {
+    "root_rom": false,
+    "orig": "44bb12cd9fda56da4489c9e8eb4de27ed41609f1",
+    "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
+    "new": "41911b26ace3e83dd6cd90421de6acfc4f2c31be"
+  },
+  {
+    "root_rom": false,
+    "orig": "41911b26ace3e83dd6cd90421de6acfc4f2c31be",
+    "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
+    "new": "1749a885c58ad94b202febf09b1f430e2a6dd2aa"
+  },
+  {
+    "root_rom": true,
+    "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
+    "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
+    "new": "3bcb1558044fe3ad20924a3440c818cf65ac4d4e"
+  },
+  {
+    "root_rom": false,
+    "orig": "3bcb1558044fe3ad20924a3440c818cf65ac4d4e",
+    "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
+    "new": "fa3d2612c16c3c304b36182d64c0530c946de253"
+  },
+  {
+    "root_rom": false,
+    "orig": "fa3d2612c16c3c304b36182d64c0530c946de253",
+    "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
+    "new": "1749a885c58ad94b202febf09b1f430e2a6dd2aa"
+  },
+  {
+    "root_rom": false,
+    "orig": "3bcb1558044fe3ad20924a3440c818cf65ac4d4e",
+    "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
+    "new": "0136052e7c20a467db6838fced17aa3b6b621ecd"
+  },
+  {
+    "root_rom": false,
+    "orig": "0136052e7c20a467db6838fced17aa3b6b621ecd",
+    "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
+    "new": "1749a885c58ad94b202febf09b1f430e2a6dd2aa"
+  },
+  {
+    "root_rom": true,
+    "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
+    "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
+    "new": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d"
+  },
+  {
+    "root_rom": false,
+    "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
+    "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
+    "new": "41911b26ace3e83dd6cd90421de6acfc4f2c31be"
+  },
+  {
+    "root_rom": false,
+    "orig": "41911b26ace3e83dd6cd90421de6acfc4f2c31be",
+    "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
+    "new": "1749a885c58ad94b202febf09b1f430e2a6dd2aa"
+  },
+  {
+    "root_rom": false,
+    "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
+    "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
+    "new": "0136052e7c20a467db6838fced17aa3b6b621ecd"
+  },
+  {
+    "root_rom": false,
+    "orig": "0136052e7c20a467db6838fced17aa3b6b621ecd",
+    "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
+    "new": "1749a885c58ad94b202febf09b1f430e2a6dd2aa"
+  }
+]

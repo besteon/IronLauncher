@@ -29,8 +29,8 @@ def patch_recursive_array(romFullPath, patchesFolder, orig_depth, depth, patches
 
         if patch_sha1 not in patches:
             if patch.endswith('.ips') or patch.endswith('.bps'):
-                new_rom = f'{patch}-{rom}'
-                flips_args = ["flips", "--apply", f"{patchesFolder}/{patch}", f'{romFullPath}', f'{new_rom}']
+                new_rom = f'buildscripts/{patch}-{rom}'
+                flips_args = ["files/tools/binaries/flips", "--apply", f"{patchesFolder}/{patch}", f'{romFullPath}', f'{new_rom}']
                 proc = subprocess.call(flips_args)
                 with open(new_rom, 'rb') as new:
                     new_sha1 = hashlib.sha1(new.read()).hexdigest()
@@ -60,15 +60,19 @@ if __name__ == '__main__':
 
     results = [ ]
 
+    romsFolder = os.path.join(os.path.dirname(__file__), romsFolder)
+    patchesFolder = os.path.join(os.path.dirname(__file__), patchesFolder)
+
     for rom in os.listdir(romsFolder):
         hash = ''
         with open(f'{romsFolder}/{rom}', 'rb') as r:
             hash = hashlib.sha1(r.read()).hexdigest()
         results += patch_recursive_array(f'{romsFolder}/{rom}', patchesFolder, depth, depth, [ ])
 
-    for rom in os.listdir(os.getcwd()):
+    for rom in os.listdir(os.getcwd() + '/buildscripts'):
         if rom.endswith('.gba'):
-            os.remove(rom)
+            os.remove('buildscripts/'+rom)
 
-    with open('patchgraph.json', 'w') as f:
-        json.dump(results, f)
+    patchgraphpath = os.path.join(os.path.dirname(__file__), '../files/tools/data/patchgraph.json')
+    with open(patchgraphpath, 'w') as f:
+        json.dump(results, f, indent=2)
