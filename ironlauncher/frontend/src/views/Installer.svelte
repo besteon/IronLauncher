@@ -3,12 +3,15 @@
     import launcherlogo from '../assets/launcher.png'
     import {AreDepsInstalled, InstallDependencies} from '../../wailsjs/go/main/App.js'
 
+    let installing = false
+
 	function installDeps() {
+        installing = true
 		InstallDependencies().then(result => {
             (function wait_for_install() {
                 AreDepsInstalled().then(result => {
                     if (result) {
-                        window.location.hash = '#launcher'
+                        window.location.hash = '#initialize'
                     } else {
                         setTimeout(wait_for_install, 1000)
                     }
@@ -26,7 +29,11 @@
             <div class="padding"></div>
         </div>
         <div class="install">
-            <button class="btn" on:click={installDeps}>Install</button>
+            {#if installing == false}
+                <button class="btn" on:click={installDeps}>Install</button>
+            {:else}
+                <div>Installing, please wait...</div>
+            {/if}
         </div>
     </div>
 

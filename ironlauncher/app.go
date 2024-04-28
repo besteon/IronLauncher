@@ -11,7 +11,9 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"strconv"
 	"strings"
+	"syscall"
 	"time"
 
 	"github.com/shirou/gopsutil/v3/host"
@@ -41,8 +43,7 @@ var savespath string = ""
 var gbaSettingsPath string = ""
 var ndsSettingsPath string = ""
 
-// var CONTAINER string = "docker.io/besteon/ironlauncher:latest"
-var CONTAINER string = "ironlauncher:dev"
+var CONTAINER string = "docker.io/besteon/ironlauncher:latest"
 
 type Settings struct {
 	RomsFolder  string `json:"romsFolder"`
@@ -72,6 +73,8 @@ func Which(cmd string) bool {
 // so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
+	runtime.WindowSetMinSize(a.ctx, 640, 480)
+	runtime.WindowSetMaxSize(a.ctx, 640, 480)
 
 	a.InitFolderStructure()
 
@@ -183,18 +186,25 @@ func (a *App) InitFolderStructure() {
 
 func (a *App) AreDepsInstalled() bool {
 	hostinfo, _ := host.Info()
-	if hostinfo.OS == "windows" {
-		return Which("podman")
-	} else if hostinfo.OS == "linux" {
-		return Which("podman") && Which("pulseaudio") && os.Getenv("DISPLAY") != ""
-	}
 
-	return false
+	result := false
+	if hostinfo.OS == "windows" {
+		result = Which("podman")
+	} else if hostinfo.OS == "linux" {
+		result = Which("podman") && Which("pulseaudio") && os.Getenv("DISPLAY") != ""
+	}
+	fmt.Printf("AreDepsInstalled: %s", strconv.FormatBool(result))
+	return result
 }
 
 func (a *App) StartUp() bool {
+	fmt.Println("Updating container...")
+	a.UpdateContainer()
+	fmt.Println("Container updated.")
+
 	hostinfo, _ := host.Info()
 	if hostinfo.OS == "windows" {
+		fmt.Println("Initializing Windows Podman")
 		InitWindowsPodman()
 	}
 
@@ -204,10 +214,12 @@ func (a *App) StartUp() bool {
 func InitWindowsPodman() {
 	cmdStr := strings.Fields("podman machine init")
 	cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+	cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 	cmd.Run()
 
 	cmdStr = strings.Fields("podman machine start")
 	cmd = exec.Command(cmdStr[0], cmdStr[1:]...)
+	cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 	cmd.Run()
 }
 
@@ -273,6 +285,7 @@ func (a *App) InstallDependencies() bool {
 		cmdStr := strings.Fields(fmt.Sprintf("%s /install /passive /quiet", out.Name()))
 		fmt.Println(cmdStr)
 		cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+		cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 		err = cmd.Run()
 		if err != nil {
 			fmt.Println(err.Error())
@@ -283,6 +296,7 @@ func (a *App) InstallDependencies() bool {
 	} else if hostinfo.OS == "linux" {
 		cmdStr := strings.Fields("sudo -A apt install -y podman pulseaudio xwayland && Xwayland")
 		cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+		cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 		cmd.Env = os.Environ()
 		cmd.Env = append(cmd.Env, "SUDO_ASKPASS=/usr/bin/ssh-askpass")
 		cmd.Start()
@@ -314,15 +328,18 @@ func (a *App) GetSettings() Settings {
 }
 
 func (a *App) UpdateContainer() {
-	hostinfo, _ := host.Info()
 	cmdStrBuilder := "podman pull docker.io/besteon/ironlauncher:latest"
-	if hostinfo.OS == "windows" {
-		cmdStrBuilder = "wsl " + cmdStrBuilder
-	}
 
 	cmdStr := strings.Fields(cmdStrBuilder)
 	cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
-	cmd.Run()
+	cmd.Stderr = os.Stderr
+	cmd.Stdout = os.Stdout
+	cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+	err := cmd.Run()
+
+	if err != nil {
+		fmt.Println(err.Error())
+	}
 }
 
 func (a *App) StartContainer(path string) {
@@ -331,7 +348,7 @@ func (a *App) StartContainer(path string) {
 
 		if strings.Contains(hostinfo.Platform, "Windows 10") {
 			ip := GetOutboundIP()
-			cmdStr := strings.Fields(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
+			cmdStr := strings.Fields(strings.ReplaceAll(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
 			-e 'DISPLAY=%s:0' 
 			-e 'PULSE_SERVER=/mnt/wslg/PulseServer' 
 			-v '/mnt/wslg/:/mnt/wslg/' 
@@ -342,15 +359,16 @@ func (a *App) StartContainer(path string) {
 			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/nds/Ironmon-Tracker/Settings.ini'
 			-v '%s:/home/launcher/ironlauncher.ini'
 			--net=host 
-			%s`, ip, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER))
+			%s`, ip, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER), `\`, `\\`))
 			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 			err := cmd.Start()
 
 			if err != nil {
 				fmt.Println(err.Error())
 			}
 		} else if strings.Contains(hostinfo.Platform, "Windows 11") {
-			cmdStr := strings.Fields(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
+			cmdStr := strings.Fields(strings.ReplaceAll(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
 			-e 'DISPLAY=:0' 
 			-e 'PULSE_SERVER=/mnt/wslg/PulseServer' 
 			-e 'WAYLAND_DISPLAY=wayland-0' 
@@ -363,8 +381,10 @@ func (a *App) StartContainer(path string) {
 			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/nds/Ironmon-Tracker/Settings.ini'
 			-v '%s:/home/launcher/ironlauncher.ini'
 			--net=host 
-			%s`, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER))
+			%s`, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER), `\`, `\\`))
+			fmt.Println(cmdStr)
 			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 			err := cmd.Start()
 
 			if err != nil {
@@ -377,6 +397,7 @@ func (a *App) StartContainer(path string) {
 		xdg := os.Getenv("XDG_RUNTIME_DIR")
 		home, _ := os.UserHomeDir()
 		xhost := exec.Command("xhost", "+")
+		xhost.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 		xhost.Start()
 
 		cmdStr := strings.Fields(fmt.Sprintf(`podman run
@@ -394,6 +415,7 @@ func (a *App) StartContainer(path string) {
 			--net=host
 			%s`, display, xdg, xdg, xdg, home, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER))
 		cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+		cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 		cmd.Start()
 	}
 
@@ -405,8 +427,10 @@ func (a *App) PollEmulator() {
 	containerRunning := false
 	for !containerRunning {
 		cmdStr := strings.Fields("podman ps")
-		out, err := exec.Command(cmdStr[0], cmdStr[1:]...).Output()
-		fmt.Printf("%s", out)
+		cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+		cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+		out, err := cmd.Output()
+
 		if err != nil {
 			fmt.Println(err.Error())
 		}
@@ -418,7 +442,9 @@ func (a *App) PollEmulator() {
 	}
 	for {
 		cmdStr := strings.Fields("podman ps")
-		out, err := exec.Command(cmdStr[0], cmdStr[1:]...).Output()
+		cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+		cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+		out, err := cmd.Output()
 		if err != nil {
 			fmt.Println(err.Error())
 		}

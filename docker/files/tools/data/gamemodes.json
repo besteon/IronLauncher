@@ -10,18 +10,74 @@
                 "RandomizerSettings": null,
                 "Tracker": false
             },
-            "Classic Randomizer": {
-                "RomHash":"dd5945db9b930750cb39d00c84da8571feebf417",
-                "QolHash":"dd5945db9b930750cb39d00c84da8571feebf417",
-                "Randomizer": "default",
-                "RandomizerSettings": null,
-                "Tracker": false
-            },
             "Classic IronMon": {
                 "RomHash":"dd5945db9b930750cb39d00c84da8571feebf417",
-                "QolHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "QolHash":"1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
                 "Randomizer": "default",
                 "RandomizerSettings": "FRLG Standard.rnqs",
+                "Tracker": true
+            },
+            "Ultimate IronMon": {
+                "RomHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "QolHash":"1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
+                "Randomizer": "default",
+                "RandomizerSettings": "FRLG Ultimate.rnqs",
+                "Tracker": true
+            },
+            "Survival IronMon": {
+                "RomHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "QolHash":"1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
+                "Randomizer": "default",
+                "RandomizerSettings": "FRLG Survival.rnqs",
+                "Tracker": true
+            },
+            "Kaizo IronMon": {
+                "RomHash":"dd5945db9b930750cb39d00c84da8571feebf417",
+                "QolHash":"1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
+                "Randomizer": "default",
+                "RandomizerSettings": "FRLG Kaizo.rnqs",
+                "Tracker": true
+            },
+            "Super Kaizo IronMon": {
+                "RomHash":"28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
+                "QolHash":"b260343fc52f36b6c89b87c1bacb731b63e5786e",
+                "Randomizer": "default",
+                "RandomizerSettings": "FRLG Super Kaizo.rnqs",
+                "Tracker": true
+            },
+            "NatDex Classic IronMon": {
+                "RomHash":"847a3d5cbabb20147e62ce466db5b513ebe09790",
+                "QolHash":"847a3d5cbabb20147e62ce466db5b513ebe09790",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "FRLG NatDex Standard.rnqs",
+                "Tracker": true
+            },
+            "NatDex Ultimate IronMon": {
+                "RomHash":"847a3d5cbabb20147e62ce466db5b513ebe09790",
+                "QolHash":"847a3d5cbabb20147e62ce466db5b513ebe09790",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "FRLG NatDex Ultimate.rnqs",
+                "Tracker": true
+            },
+            "NatDex Survival IronMon": {
+                "RomHash":"847a3d5cbabb20147e62ce466db5b513ebe09790",
+                "QolHash":"847a3d5cbabb20147e62ce466db5b513ebe09790",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "FRLG NatDex Survival.rnqs",
+                "Tracker": true
+            },
+            "NatDex Kaizo IronMon": {
+                "RomHash":"847a3d5cbabb20147e62ce466db5b513ebe09790",
+                "QolHash":"847a3d5cbabb20147e62ce466db5b513ebe09790",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "FRLG NatDex Kaizo.rnqs",
+                "Tracker": true
+            },
+            "NatDex Super Kaizo IronMon": {
+                "RomHash":"b5a754f124ced5efe1d294857b413a286560d856",
+                "QolHash":"b5a754f124ced5efe1d294857b413a286560d856",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "FRLG NatDex Super Kaizo.rnqs",
                 "Tracker": true
             }
         }

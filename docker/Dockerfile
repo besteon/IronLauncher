@@ -5,15 +5,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN=true
 ENV XKB_DEFAULT_RULES=base
 
-ENV USER=launcher
-ENV HOME=/home/$USER
-ARG BIZHAWK_FILES=$HOME/files/bizhawk
-ARG PATCHES=$HOME/files/patches
-ARG TRACKER=$HOME/files/ironmon-tracker
-ARG TOOLS=$HOME/files/tools
-ARG BINARIES=$TOOLS/binaries
-ENV SCRIPTS=$TOOLS/scripts
-
 #Install dependencies
 RUN apt-get update && \
         apt-get install -y \
@@ -56,13 +47,23 @@ RUN apt-get update && \
         curl \
         xdelta3 \
         pulseaudio \
-        chromium-browser
+        chromium-browser \
+        nano
+
+ENV USER=launcher
+ENV HOME=/home/$USER
+ARG BIZHAWK_FILES=$HOME/files/bizhawk
+ARG PATCHES=$HOME/files/patches
+ARG TRACKER=$HOME/files/ironmon-tracker
+ARG TOOLS=$HOME/files/tools
+ENV BINARIES=$TOOLS/binaries
+ENV SCRIPTS=$TOOLS/scripts
 
 ADD files $HOME/files
 
 RUN useradd -ms /bin/bash $USER && chown -R $USER $HOME && \
   mkdir /roms  && mkdir /data && mkdir /data/saves && \
-  chown $USER /roms && chown -R $USER /data && \
+  chown $USER /roms && chown -R $USER /data && chmod +x $BINARIES/flips && \
   wget https://github.com/btimofeev/lazy_ips/archive/refs/heads/master.zip && \
   unzip master.zip && cd lazy_ips-master && python3 setup.py install
 
@@ -92,8 +93,8 @@ RUN mkdir -p $HOME/.local/share/fonts && mv $TRACKER/Franklin\ Gothic\ Medium\ R
   wget https://github.com/mdmurphy2/Ironmon-fastforward/releases/download/v1.2/FastForwardBattleIntroExtension.lua -O $HOME/BizHawk/Lua/gba/Ironmon-Tracker/extensions/DeathQuotes.lua && \
   wget https://github.com/UTDZac/SpriteIsMe-IronmonExtension/releases/download/v1.4/SpriteIsMe.zip && \
   unzip SpriteIsMe.zip -d $HOME/BizHawk/Lua/gba/Ironmon-Tracker/extensions/ && \
-  wget https://github.com/CyanSMP64/NatDexExtension/releases/download/v1.1.0/NatDexExtension_v1.1.0.zip && \
-  unzip NatDexExtension_v1.1.0.zip -d $HOME/BizHawk/Lua/gba/Ironmon-Tracker/extensions/ && \
+  wget https://github.com/CyanSMP64/NatDexExtension/releases/download/v1.1.2/NatDexExtension_v1.1.2.zip && \
+  unzip NatDexExtension_v1.1.2.zip -d $HOME/BizHawk/Lua/gba/Ironmon-Tracker/extensions/ && \
   wget https://github.com/WaffleSmacker/SmackerTracker-IronmonExtension/releases/download/v1.2/SmackerTracker.zip && \
   unzip SmackerTracker.zip -d $HOME/BizHawk/Lua/gba/Ironmon-Tracker/extensions/ && \
   wget https://github.com/Fellshadow/Ironmon-Tracker-AutoPokemonThemes/releases/download/v1.2/AutoPokemonThemes_v1.2.zip && \

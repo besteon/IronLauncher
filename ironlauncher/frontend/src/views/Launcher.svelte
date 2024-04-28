@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import ironlogo from '../assets/iron.png'
     import launcherlogo from '../assets/launcher.png'
     import {WindowHide, WindowShow, EventsOn} from '../../wailsjs/runtime/runtime.js'
@@ -14,13 +16,16 @@
 
     let modes = [
         { value: "Vanilla" },
-        { value: "Classic Randomizer" },
         { value: "Classic IronMon" },
-        { value: "Doubles IronMon" },
         { value: "Ultimate IronMon" },
         { value: "Survival IronMon" },
         { value: "Kaizo IronMon" },
         { value: "Super Kaizo IronMon" },
+        { value: "NatDex Classic IronMon" },
+        { value: "NatDex Ultimate IronMon" },
+        { value: "NatDex Survival IronMon" },
+        { value: "NatDex Kaizo IronMon" },
+        { value: "NatDex Super Kaizo IronMon" },
     ];
 
     function getRomsFolder() {

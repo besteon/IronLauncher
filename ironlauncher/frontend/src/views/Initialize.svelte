@@ -3,13 +3,11 @@
     import launcherlogo from '../assets/launcher.png'
     import {StartUp} from '../../wailsjs/go/main/App.js'
 
-    (function wait_for_install() {
+    (function wait_for_startup() {
+        console.log("Waiting for startup result...")
         StartUp().then(result => {
-            console.log(result)
             if (result) {
                 window.location.hash = '#launcher'
-            } else {
-                setTimeout(wait_for_install, 1000)
             }
         })
     })()
@@ -21,6 +19,11 @@
             <img alt="Iron logo" class="logo" src="{ironlogo}">
             <img alt="Launcher logo" class="logo" src="{launcherlogo}">
             <div class="padding"></div>
+            <div class="install">
+                <div>Initializing, please wait.</div>
+                <div>This will take a while the first time</div>
+                <div>(downloading 2Gb container image)</div>
+            </div>
         </div>
     </div>
 
