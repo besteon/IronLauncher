@@ -7,16 +7,9 @@
 
 	function installDeps() {
         installing = true
-		InstallDependencies().then(result => {
-            (function wait_for_install() {
-                AreDepsInstalled().then(result => {
-                    if (result) {
-                        window.location.hash = '#initialize'
-                    } else {
-                        setTimeout(wait_for_install, 1000)
-                    }
-                })
-            })()
+		InstallDependencies().then(r => {
+            console.log("Install Dependencies: " + r)
+            window.location.hash = '#initialize'
         })
 	}
 </script>

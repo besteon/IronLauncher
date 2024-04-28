@@ -99,7 +99,7 @@ func (a *App) InitFolderStructure() {
 
 	if hostinfo.OS == "windows" {
 		appdata := os.Getenv("APPDATA")
-		appdata += "\\ironlauncher.exe"
+		appdata += "\\ironlauncher"
 
 		err := os.MkdirAll(appdata, os.ModePerm)
 		if err != nil {
