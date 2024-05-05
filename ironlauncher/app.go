@@ -211,7 +211,7 @@ func (a *App) StartUp() bool {
 		fmt.Println("Initializing Windows Podman")
 		InitWindowsPodman()
 
-		if strings.Contains(hostinfo.Platform, "Windows 11") {
+		if strings.Contains(hostinfo.Platform, "Windows 10") {
 			fmt.Println("Starting vcxsrv and pulseaudio")
 			appdata := os.Getenv("APPDATA")
 			appdata += "\\ironlauncher"
@@ -312,7 +312,7 @@ func (a *App) InstallDependencies() bool {
 		}
 		os.Remove(out.Name())
 
-		if strings.Contains(hostinfo.Platform, "Windows 11") {
+		if strings.Contains(hostinfo.Platform, "Windows 10") {
 			fmt.Println("Downloading vcxsrv and pulseaudio")
 			appdata := os.Getenv("APPDATA")
 			appdata += "\\ironlauncher"
@@ -406,7 +406,7 @@ func (a *App) StartContainer(path string) {
 	hostinfo, _ := host.Info()
 	if hostinfo.OS == "windows" {
 
-		if strings.Contains(hostinfo.Platform, "Windows 11") {
+		if strings.Contains(hostinfo.Platform, "Windows 10") {
 			ip := GetOutboundIP()
 			cmdStr := strings.Fields(strings.ReplaceAll(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
 			-e 'DISPLAY=%s:0' 
