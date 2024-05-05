@@ -211,7 +211,7 @@ func (a *App) StartUp() bool {
 		fmt.Println("Initializing Windows Podman")
 		InitWindowsPodman()
 
-		if strings.Contains(hostinfo.Platform, "Windows 10") {
+		if strings.Contains(hostinfo.Platform, "Windows 11") {
 			fmt.Println("Starting vcxsrv and pulseaudio")
 			appdata := os.Getenv("APPDATA")
 			appdata += "\\ironlauncher"
@@ -312,20 +312,44 @@ func (a *App) InstallDependencies() bool {
 		}
 		os.Remove(out.Name())
 
-		if strings.Contains(hostinfo.Platform, "Windows 10") {
+		if strings.Contains(hostinfo.Platform, "Windows 11") {
 			fmt.Println("Downloading vcxsrv and pulseaudio")
 			appdata := os.Getenv("APPDATA")
 			appdata += "\\ironlauncher"
 
-			cmdStr := strings.Fields(fmt.Sprintf("%s\\vcxsrv\\vcxsrv.exe -ac -multiwindow", appdata))
+			cmdStr := strings.Fields(fmt.Sprintf("curl https://raw.githubusercontent.com/besteon/IronLauncher/master/win10/vcxsrv.zip -o %s\\vcxsrv.zip", appdata))
 			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
 			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
-			cmd.Start()
+			err := cmd.Run()
+			if err != nil {
+				fmt.Println(err.Error())
+			}
 
-			cmdStr = strings.Fields(fmt.Sprintf("%s\\pulseaudio-1.1\\bin\\pulseaudio.exe", appdata))
+			cmdStr = strings.Fields(fmt.Sprintf("curl https://raw.githubusercontent.com/besteon/IronLauncher/master/win10/pulseaudio-1.1.zip -o %s\\pulseaudio-1.1.zip", appdata))
 			cmd = exec.Command(cmdStr[0], cmdStr[1:]...)
 			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
-			cmd.Start()
+			err = cmd.Run()
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+
+			fmt.Println("Extracting vcxsrv and pulseaudio")
+
+			cmdStr = strings.Fields(fmt.Sprintf("tar -xf %s\\vcxsrv.zip -C %s", appdata, appdata))
+			cmd = exec.Command(cmdStr[0], cmdStr[1:]...)
+			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+			err = cmd.Run()
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+
+			cmdStr = strings.Fields(fmt.Sprintf("tar -xf %s\\pulseaudio-1.1.zip -C %s", appdata, appdata))
+			cmd = exec.Command(cmdStr[0], cmdStr[1:]...)
+			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+			err = cmd.Run()
+			if err != nil {
+				fmt.Println(err.Error())
+			}
 		}
 
 		return Which("podman")
@@ -382,7 +406,7 @@ func (a *App) StartContainer(path string) {
 	hostinfo, _ := host.Info()
 	if hostinfo.OS == "windows" {
 
-		if strings.Contains(hostinfo.Platform, "Windows 10") {
+		if strings.Contains(hostinfo.Platform, "Windows 11") {
 			ip := GetOutboundIP()
 			cmdStr := strings.Fields(strings.ReplaceAll(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
 			-e 'DISPLAY=%s:0' 
