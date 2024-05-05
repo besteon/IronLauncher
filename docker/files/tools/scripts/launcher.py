@@ -55,10 +55,10 @@ def recoverRom(romsFolder, patchesFolder, patchGraphFile, target_hash, base_rom)
                     print(f'Applied patch {patch_file}. More patches to go.')                
 
         print("There was an issue recovering the target ROM")
-        return False
+        return ""
     else:
         print('No patches needed')
-        return ""
+        return f'{romsFolder}/{base_rom}'
 
 
 if __name__ == '__main__':
