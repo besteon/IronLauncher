@@ -1,874 +1,972 @@
 [
   {
-    "name": "Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": true,
     "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
     "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
     "new": "dc4a5c8f45f4a1a2ac841db7f3896c6b4a7a0fb6"
   },
   {
-    "name": "Emerald.US.All.Trainers.Have.Smart.AI.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "dc4a5c8f45f4a1a2ac841db7f3896c6b4a7a0fb6",
     "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
     "new": "4f8172e7bc05c7a3e2c1885d00f78f07a90cb64a"
   },
   {
-    "name": "Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "dc4a5c8f45f4a1a2ac841db7f3896c6b4a7a0fb6",
     "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
     "new": "ee04283d158092fa87faba708b21f6b6ca5e41e8"
   },
   {
-    "name": "Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "dc4a5c8f45f4a1a2ac841db7f3896c6b4a7a0fb6",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "b6154550890c157fd608f5a92266b4a698c35afc"
+  },
+  {
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": true,
     "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
     "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
     "new": "5dc60304b763207c9e3e18a89a2f1710eb7af542"
   },
   {
-    "name": "Emerald-Phys-Spec-Split-Fixed.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "5dc60304b763207c9e3e18a89a2f1710eb7af542",
     "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
     "new": "4f8172e7bc05c7a3e2c1885d00f78f07a90cb64a"
   },
   {
-    "name": "Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "5dc60304b763207c9e3e18a89a2f1710eb7af542",
     "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
     "new": "e3e23ab40754a7a1188650aff28e0e109269f0a3"
   },
   {
-    "name": "Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "5dc60304b763207c9e3e18a89a2f1710eb7af542",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "8aca1c0ca5b2dc2568d4fdb93db074887916c2b2"
+  },
+  {
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": true,
     "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
     "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
     "new": "50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11"
   },
   {
-    "name": "Emerald-Phys-Spec-Split-Fixed.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
     "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
     "new": "ee04283d158092fa87faba708b21f6b6ca5e41e8"
   },
   {
-    "name": "Emerald.US.All.Trainers.Have.Smart.AI.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
     "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
     "new": "e3e23ab40754a7a1188650aff28e0e109269f0a3"
   },
   {
-    "name": "pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "d58fab9db2636046ab5a81626375a44053a22776"
+  },
+  {
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": true,
+    "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "d58fab9db2636046ab5a81626375a44053a22776"
+  },
+  {
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "d58fab9db2636046ab5a81626375a44053a22776",
+    "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
+    "new": "b6154550890c157fd608f5a92266b4a698c35afc"
+  },
+  {
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "d58fab9db2636046ab5a81626375a44053a22776",
+    "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
+    "new": "8aca1c0ca5b2dc2568d4fdb93db074887916c2b2"
+  },
+  {
+    "name": "buildscripts/pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": true,
     "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
     "patch": "c8e0b9a5e2253a7d3efce05d74f196a196252b40",
     "new": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8"
   },
   {
-    "name": "Emerald-Phys-Spec-Split-Fixed.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
     "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
     "new": "97e2d007915267befabafa24480de3af0477728c"
   },
   {
-    "name": "Emerald.US.All.Trainers.Have.Smart.AI.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
     "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
     "new": "22fde1c624e6c53e853b8f67d9c109daa6e01079"
   },
   {
-    "name": "Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
     "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
     "new": "2d2a7e5acc4a8df51d518e82c8ef7f275221d080"
   },
   {
-    "name": "Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "2575ef9258f57ceae18c180a316821a8f9cc0159"
+  },
+  {
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": true,
     "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
     "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
     "new": "dc4a5c8f45f4a1a2ac841db7f3896c6b4a7a0fb6"
   },
   {
-    "name": "Emerald.US.All.Trainers.Have.Smart.AI.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "dc4a5c8f45f4a1a2ac841db7f3896c6b4a7a0fb6",
     "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
     "new": "4f8172e7bc05c7a3e2c1885d00f78f07a90cb64a"
   },
   {
-    "name": "Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "dc4a5c8f45f4a1a2ac841db7f3896c6b4a7a0fb6",
     "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
     "new": "ee04283d158092fa87faba708b21f6b6ca5e41e8"
   },
   {
-    "name": "Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Emerald-Phys-Spec-Split-Fixed.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "dc4a5c8f45f4a1a2ac841db7f3896c6b4a7a0fb6",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "b6154550890c157fd608f5a92266b4a698c35afc"
+  },
+  {
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": true,
     "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
     "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
     "new": "5dc60304b763207c9e3e18a89a2f1710eb7af542"
   },
   {
-    "name": "Emerald-Phys-Spec-Split-Fixed.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "5dc60304b763207c9e3e18a89a2f1710eb7af542",
     "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
     "new": "4f8172e7bc05c7a3e2c1885d00f78f07a90cb64a"
   },
   {
-    "name": "Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "5dc60304b763207c9e3e18a89a2f1710eb7af542",
     "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
     "new": "e3e23ab40754a7a1188650aff28e0e109269f0a3"
   },
   {
-    "name": "Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Emerald.US.All.Trainers.Have.Smart.AI.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "5dc60304b763207c9e3e18a89a2f1710eb7af542",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "8aca1c0ca5b2dc2568d4fdb93db074887916c2b2"
+  },
+  {
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": true,
     "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
     "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
     "new": "50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11"
   },
   {
-    "name": "Emerald-Phys-Spec-Split-Fixed.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
     "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
     "new": "ee04283d158092fa87faba708b21f6b6ca5e41e8"
   },
   {
-    "name": "Emerald.US.All.Trainers.Have.Smart.AI.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
     "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
     "new": "e3e23ab40754a7a1188650aff28e0e109269f0a3"
   },
   {
-    "name": "pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "d58fab9db2636046ab5a81626375a44053a22776"
+  },
+  {
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": true,
+    "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "d58fab9db2636046ab5a81626375a44053a22776"
+  },
+  {
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "d58fab9db2636046ab5a81626375a44053a22776",
+    "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
+    "new": "b6154550890c157fd608f5a92266b4a698c35afc"
+  },
+  {
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "d58fab9db2636046ab5a81626375a44053a22776",
+    "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
+    "new": "8aca1c0ca5b2dc2568d4fdb93db074887916c2b2"
+  },
+  {
+    "name": "buildscripts/pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": true,
     "orig": "f3ae088181bf583e55daf962a92bb46f4f1d07b7",
     "patch": "c8e0b9a5e2253a7d3efce05d74f196a196252b40",
     "new": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8"
   },
   {
-    "name": "Emerald-Phys-Spec-Split-Fixed.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald-Phys-Spec-Split-Fixed.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
     "patch": "f9c44c63b5751a967defc860bae8865bc801ec30",
     "new": "97e2d007915267befabafa24480de3af0477728c"
   },
   {
-    "name": "Emerald.US.All.Trainers.Have.Smart.AI.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Emerald.US.All.Trainers.Have.Smart.AI.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
     "patch": "ed99a9312e9c58176b78b781bbaea1c30e866067",
     "new": "22fde1c624e6c53e853b8f67d9c109daa6e01079"
   },
   {
-    "name": "Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
     "root_rom": false,
     "orig": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
     "patch": "f9677fdcbe36bb6bdae8ff0bbeb96f1a2d266d95",
     "new": "2d2a7e5acc4a8df51d518e82c8ef7f275221d080"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.Emerald.v1.2.1.-.The.Bike.Update.with.6.Percent.Increase.ips-pokeemerald_natdex_1.1.2.bps-Pokemon - Emerald Version (USA, Europe).gba",
+    "root_rom": false,
+    "orig": "23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+    "patch": "ebaa89e3b7d8665883019a868aa48092445e7e47",
+    "new": "2575ef9258f57ceae18c180a316821a8f9cc0159"
+  },
+  {
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "b800ca4bdaba4f511a615b29e961df63a12046b9"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "7e7d41bc217fc2f766c9d9cd1d3836ff1158eb46"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "b845527028bc7f165995f857f30482c0eee28f70"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "5b691d4ffee7d81c382c8f30a4ada48f787438ce"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "55ab22f31b1cd3c386d84ed13b222fa2555c08b4"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "b621275c43fe08638624e0bc0704a4090c1ef645"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "2159862c7afc641f7b0723671909fa811ad2ba53"
   },
   {
-    "name": "IronMon_FR_1_1.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-Faster.FireRed.1.3.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1096c9f2d53e7e2d3a84a8c17f900c665e69d683",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "ed1212a1d8ec728adf318e82c30a72892d54fe5e"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "b260343fc52f36b6c89b87c1bacb731b63e5786e"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "b260343fc52f36b6c89b87c1bacb731b63e5786e",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "ac5b561151c2f9d8c3f6f80fd986b2ff0e74c734"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "b260343fc52f36b6c89b87c1bacb731b63e5786e",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "bb650cff7ec4884d479b2f684ebffcb118e9f495"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "b260343fc52f36b6c89b87c1bacb731b63e5786e",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "e051b0f65e61e50b562421ae45d083b6b4963d4d"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "b260343fc52f36b6c89b87c1bacb731b63e5786e",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "1f5ef54ab86428c75dd3ec1c3f30440af8655a30"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "b260343fc52f36b6c89b87c1bacb731b63e5786e",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "2f9eb234e7a06a08575d34b41759e838a0c305ae"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "b260343fc52f36b6c89b87c1bacb731b63e5786e",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "8f0c90fb29952a8f4158a9eadfe48dd7021a65bd"
   },
   {
-    "name": "IronMon_FR_1_1.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-Faster.FireRed.Super.Kaizo.1.0.2.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "b260343fc52f36b6c89b87c1bacb731b63e5786e",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "bac034c5344b07634c34a830bd11205e20abea96"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "1f59ccf425f1a6c116d9a28e77b29475182c6e53"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "b260343fc52f36b6c89b87c1bacb731b63e5786e"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "918a3e940cde34da358180d9e8d801046100747c"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "cacaf68db2daee6e95e5a2d4d0bca7f865854c35"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "68af121c7fee5032d8bd17fc98f09e1470f4b470"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "fd114ff2d35d9be9a7af9e36645be9112fdf44f5"
   },
   {
-    "name": "IronMon_FR_1_1.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "0dac2ba6731b6f8ea70fc70d186e1d06b635dc96"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "b845527028bc7f165995f857f30482c0eee28f70"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "b260343fc52f36b6c89b87c1bacb731b63e5786e"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "be8150d3ad1bf2e1db1dfd5bb0bb67ecd4658321"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "7584e1a649182bbb6bfc43e312ed366ab1cfbff6"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "e06b3defe0c3f558a7dde163f036c44a0a6925d3"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "fe03a2fccab5993c62ea9ca12c48e4818846ccaa"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "83a41d9eed02bfcb7abe2ae75dd582ce930aef78"
   },
   {
-    "name": "IronMon_FR_1_1.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "28ec1dc683ede6b9469abfc5e7eec982da8ab19d",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "6ecf6bbf19ebe0b26ae637675fd871be5e62c20e"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "199b2dfddf1e724d419e8ef289502432a0ee5691"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "199b2dfddf1e724d419e8ef289502432a0ee5691",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "5b691d4ffee7d81c382c8f30a4ada48f787438ce"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "199b2dfddf1e724d419e8ef289502432a0ee5691",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "e051b0f65e61e50b562421ae45d083b6b4963d4d"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "199b2dfddf1e724d419e8ef289502432a0ee5691",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "918a3e940cde34da358180d9e8d801046100747c"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "199b2dfddf1e724d419e8ef289502432a0ee5691",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "7584e1a649182bbb6bfc43e312ed366ab1cfbff6"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "199b2dfddf1e724d419e8ef289502432a0ee5691",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "c0390e66a6194685ea9554848f193c36503d2895"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "199b2dfddf1e724d419e8ef289502432a0ee5691",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "c275e94e1d29273e3239342451acdb1c33f8d248"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "199b2dfddf1e724d419e8ef289502432a0ee5691",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "5a8efad85ece76b43d7668e3fbf4c9280c7cd65b"
   },
   {
-    "name": "IronMon_FR_1_1.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-FireRed-Phys-Spec-Split-Fixed.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "199b2dfddf1e724d419e8ef289502432a0ee5691",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "f94825e95415e80816258e9a9866d9b6fe547148"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "55ab22f31b1cd3c386d84ed13b222fa2555c08b4"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "1f5ef54ab86428c75dd3ec1c3f30440af8655a30"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "cacaf68db2daee6e95e5a2d4d0bca7f865854c35"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "e06b3defe0c3f558a7dde163f036c44a0a6925d3"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "c0390e66a6194685ea9554848f193c36503d2895"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "1a97e3385a34c583518a1b519392df6011a2eb6b"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "bd455d10e02f99fe0d4d59b21c132b79d5dd2315"
   },
   {
-    "name": "IronMon_FR_1_1.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-fireredv1.1_disable_bgm.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "560216a7bedd2c6e991f3c3e7cfe7acad7d1fab9",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "c6d35a2300a9af5e9b8a66bb5886d4e0170e18c6"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "87c1f84f322efd8916ad0c496793c4222020c460"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "87c1f84f322efd8916ad0c496793c4222020c460",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "b621275c43fe08638624e0bc0704a4090c1ef645"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "87c1f84f322efd8916ad0c496793c4222020c460",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "2f9eb234e7a06a08575d34b41759e838a0c305ae"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "87c1f84f322efd8916ad0c496793c4222020c460",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "68af121c7fee5032d8bd17fc98f09e1470f4b470"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "87c1f84f322efd8916ad0c496793c4222020c460",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "fe03a2fccab5993c62ea9ca12c48e4818846ccaa"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "87c1f84f322efd8916ad0c496793c4222020c460",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "c275e94e1d29273e3239342451acdb1c33f8d248"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "87c1f84f322efd8916ad0c496793c4222020c460",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "1a97e3385a34c583518a1b519392df6011a2eb6b"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "87c1f84f322efd8916ad0c496793c4222020c460",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "896aefac5c5f2957e276317b9b1b07bc7b8416ec"
   },
   {
-    "name": "IronMon_FR_1_1.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-fireredv1.1_disable_low_hp_sfx.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "87c1f84f322efd8916ad0c496793c4222020c460",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "005d0c10f9384eb3f235aa596fe3fe093dc03dec"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "d0ee167081b14db3c7a627c484fded87dfdd0101"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "d0ee167081b14db3c7a627c484fded87dfdd0101",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "2159862c7afc641f7b0723671909fa811ad2ba53"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "d0ee167081b14db3c7a627c484fded87dfdd0101",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "8f0c90fb29952a8f4158a9eadfe48dd7021a65bd"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "d0ee167081b14db3c7a627c484fded87dfdd0101",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "fd114ff2d35d9be9a7af9e36645be9112fdf44f5"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "d0ee167081b14db3c7a627c484fded87dfdd0101",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "83a41d9eed02bfcb7abe2ae75dd582ce930aef78"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "d0ee167081b14db3c7a627c484fded87dfdd0101",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "5a8efad85ece76b43d7668e3fbf4c9280c7cd65b"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "d0ee167081b14db3c7a627c484fded87dfdd0101",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "bd455d10e02f99fe0d4d59b21c132b79d5dd2315"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "d0ee167081b14db3c7a627c484fded87dfdd0101",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "896aefac5c5f2957e276317b9b1b07bc7b8416ec"
   },
   {
-    "name": "IronMon_FR_1_1.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-FRLG_Invisible_Trainer_-_Maple_Compatible.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "d0ee167081b14db3c7a627c484fded87dfdd0101",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "e1a2d13652b6054966e781f20c0c45dea9bbf93f"
   },
   {
-    "name": "IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "516ec736ea2a6b8543d16e871683b9ac66fec11a"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "985cb2f9110e4ce81838c4a79e76ee2fde02388d"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "055e192be2841c97df57285afb43d401294b1a2b"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "61d885c5e41313224fe6e3410df0a92ef44b0aef"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "f94825e95415e80816258e9a9866d9b6fe547148"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "c6d35a2300a9af5e9b8a66bb5886d4e0170e18c6"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "005d0c10f9384eb3f235aa596fe3fe093dc03dec"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-IronMon_FR_1_1.ips-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "14b4abcca8f070cea5d5b0f2be45451f3b09fc17",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "e1a2d13652b6054966e781f20c0c45dea9bbf93f"
   },
   {
-    "name": "pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "65d113411dfed0133ad42309d679798666215570",
     "new": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "aaa183311c1c35880457d1dfa3f4a99e97731376"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "133a4d2aa3a011ff1cd4672d55801a2d672b7f32"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "f033c9898c3ae94ad3ace87a608633cc585350b1"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "cdb5fe8bba65e6dc49621f03bed13e64ac180809"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "739a44f6ac10ab8b3fd096632a7a93c7b429d920"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "7cfcb8f32efaf4cf0b4fdf4034500f4386f8aa5a"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "91a396aa7b0bb69fbaf9f7cc77f0323cdb030dd1"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "3281ebdd877ad5a3e7b3db8cd9b68166d03401e1"
   },
   {
-    "name": "IronMon_FR_1_1.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-pokefirered_7.6.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "1484c6a6e02f13f4df6302dd2ac076d2c4044e67",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",
     "new": "9e8d1585755cd67ecde2ad8cb84419060e30f461"
   },
   {
-    "name": "pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": true,
     "orig": "dd5945db9b930750cb39d00c84da8571feebf417",
     "patch": "9a819f880a1fbd209fefb865b113cde0f1762f02",
     "new": "847a3d5cbabb20147e62ce466db5b513ebe09790"
   },
   {
-    "name": "Faster.FireRed.1.3.2.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.1.3.2.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "110dad83070970d3acc652661a2f8501a153a5a1",
     "new": "e53364bdb88ab772913b01a894b4263201ce985f"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "fc6e93c5039b3451b9cef95cc67ab13694849a0f",
     "new": "816c22a3a4994ee775d061be24737f2dc4381d42"
   },
   {
-    "name": "Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Faster.FireRed.Super.Kaizo.1.0.2.No.Blocks.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "65920aa4acfc0bac67d474c689bfd325e763d1d8",
     "new": "8d8f3af9b45557474f2caed54edee91132bfe34f"
   },
   {
-    "name": "Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/Fire.Red.US.v1.1.All.Trainers.Have.Smart.AI.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "658d10080e10cea326eac76d271ef5745a042b8b",
     "new": "b5a754f124ced5efe1d294857b413a286560d856"
   },
   {
-    "name": "FireRed-Phys-Spec-Split-Fixed.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FireRed-Phys-Spec-Split-Fixed.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "ba02f0049777a3e65959105619f8c350b78f0474",
     "new": "66d28932f151832ea3fdac156092ddcbfdf1d7bf"
   },
   {
-    "name": "fireredv1.1_disable_bgm.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_bgm.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "a64960fd2f28e3536980fc4473ff68b5cc4e8dcd",
     "new": "e155c91ac3b02c43e4b2e96bacc1730b51d12505"
   },
   {
-    "name": "fireredv1.1_disable_low_hp_sfx.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/fireredv1.1_disable_low_hp_sfx.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "8f9a691c3761886253f57d9fae9f8614ea271f83",
     "new": "f089ac800043a3df78d1db23dcf80ab49a934ce4"
   },
   {
-    "name": "FRLG_Invisible_Trainer_-_Maple_Compatible.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/FRLG_Invisible_Trainer_-_Maple_Compatible.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "7fb6e9381c8812de557d7e74d50ca309ff542959",
     "new": "411240fa4ba80c5795c77f889b0e9505c868f9c6"
   },
   {
-    "name": "IronMon_FR_1_1.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
+    "name": "buildscripts/IronMon_FR_1_1.ips-pokefirered_natdex_1.1.2.bps-Pokemon - Fire Red Version (U) (V1.1).gba",
     "root_rom": false,
     "orig": "847a3d5cbabb20147e62ce466db5b513ebe09790",
     "patch": "8e55d28e8c44e2135d999a3b66c0535934964490",

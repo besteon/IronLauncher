@@ -46,8 +46,9 @@ var savespath string = ""
 var gbaSettingsPath string = ""
 var ndsSettingsPath string = ""
 
-// var CONTAINER string = "docker.io/besteon/ironlauncher:latest"
-var CONTAINER string = "besteon/ironlauncher:dev"
+var CONTAINER string = "docker.io/besteon/ironlauncher:latest"
+
+//var CONTAINER string = "besteon/ironlauncher:dev"
 
 type Settings struct {
 	RomsFolder  string `json:"romsFolder"`
