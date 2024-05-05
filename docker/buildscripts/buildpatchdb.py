@@ -83,10 +83,12 @@ if __name__ == '__main__':
     print(f"Generated so far:")
 
     for rom in os.listdir(romsFolder):
-        hash = ''
-        with open(f'{romsFolder}/{rom}', 'rb') as r:
-            hash = hashlib.sha1(r.read()).hexdigest()
-        results += patch_recursive_array(f'{romsFolder}/{rom}', patchesFolder, depth, depth, [ ])
+        if rom.endswith('.gba'):
+            hash = ''
+            with open(f'{romsFolder}/{rom}', 'rb') as r:
+                hash = hashlib.sha1(r.read()).hexdigest()
+            patchDir = patchesFolder + "/" + hash
+            results += patch_recursive_array(f'{romsFolder}/{rom}', patchDir, depth, depth, [ ])
 
     for rom in os.listdir(os.getcwd() + '/buildscripts'):
         if rom.endswith('.gba'):

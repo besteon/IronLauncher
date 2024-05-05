@@ -50,8 +50,8 @@ RUN apt-get update && \
         chromium-browser \
         nano
 
-ENV USER=launcher
-ENV HOME=/home/$USER
+ENV USR=launcher
+ENV HOME=/home/$USR
 ARG BIZHAWK_FILES=$HOME/files/bizhawk
 ARG PATCHES=$HOME/files/patches
 ARG TRACKER=$HOME/files/ironmon-tracker
@@ -61,27 +61,27 @@ ENV SCRIPTS=$TOOLS/scripts
 
 ADD files $HOME/files
 
-RUN useradd -ms /bin/bash $USER && chown -R $USER $HOME && \
+RUN useradd -ms /bin/bash $USR && chown -R $USR $HOME && \
   mkdir /roms  && mkdir /data && mkdir /data/saves && \
-  chown $USER /roms && chown -R $USER /data && chmod +x $BINARIES/flips && \
+  chown $USR /roms && chown -R $USR /data && chmod +x $BINARIES/flips && \
   wget https://github.com/btimofeev/lazy_ips/archive/refs/heads/master.zip && \
   unzip master.zip && cd lazy_ips-master && python3 setup.py install
 
-USER $USER
+USER $USR
 WORKDIR $HOME
 
 # Install Bizhawk & Ironmon-Tracker & Randomizer & Extensions
 RUN mkdir -p $HOME/.local/share/fonts && mv $TRACKER/Franklin\ Gothic\ Medium\ Regular.ttf $HOME/.local/share/fonts && fc-cache -f && \
   python3 -m venv venv && \
   echo '[general]\ndrivers = pulse' >> ~/.alsoftrc && \
-  mkdir /home/$USER/BizHawk && unzip $BIZHAWK_FILES/BizHawk_devbuild_45e2307a.zip && \
+  mkdir /home/$USR/BizHawk && unzip $BIZHAWK_FILES/BizHawk_devbuild_45e2307a.zip && \
   tar -xvf BizHawk_devbuild_45e2307a.tar -C BizHawk && \
   chmod +x BizHawk/EmuHawkMono.sh && \
-  wget https://github.com/besteon/Ironmon-Tracker/releases/download/v8.5.1/Ironmon-Tracker.zip && \
+  wget https://github.com/besteon/Ironmon-Tracker/archive/refs/heads/dev.zip -O Ironmon-Tracker.zip && \
   wget https://github.com/Brian0255/NDS-Ironmon-Tracker/releases/download/6.2.4/NDS-Ironmon-Tracker-6.2.4.zip && \
   mkdir $HOME/BizHawk/Lua/gba && \
   mkdir $HOME/BizHawk/Lua/nds && \
-  unzip Ironmon-Tracker.zip -d $HOME/BizHawk/Lua/gba && \
+  unzip Ironmon-Tracker.zip -d $HOME/BizHawk/Lua/gba && mv $HOME/BizHawk/Lua/gba/Ironmon-Tracker-dev $HOME/BizHawk/Lua/gba/Ironmon-Tracker && \
   unzip NDS-Ironmon-Tracker-6.2.4.zip -d $HOME/BizHawk/Lua/nds && \
   wget https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases/download/v4.6.0/PokeRandoZX-v4_6_0.zip && \
   unzip PokeRandoZX-v4_6_0.zip -d $HOME/ && \

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec runuser -u $USER $SCRIPTS/entrypoint_user.sh
+exec runuser -u $USR $SCRIPTS/entrypoint_user.sh

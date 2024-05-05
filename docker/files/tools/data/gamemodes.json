@@ -81,5 +81,184 @@
                 "Tracker": true
             }
         }
+    },
+    "f3ae088181bf583e55daf962a92bb46f4f1d07b7": {
+        "Game": "Pokemon Emerald",
+        "System": "GBA",
+        "Modes": {
+            "Vanilla": {
+                "RomHash":"f3ae088181bf583e55daf962a92bb46f4f1d07b7",
+                "QolHash":"f3ae088181bf583e55daf962a92bb46f4f1d07b7",
+                "Randomizer": null,
+                "RandomizerSettings": null,
+                "Tracker": false
+            },
+            "Classic IronMon": {
+                "RomHash":"f3ae088181bf583e55daf962a92bb46f4f1d07b7",
+                "QolHash":"50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
+                "Randomizer": "default",
+                "RandomizerSettings": "RSE Standard.rnqs",
+                "Tracker": true
+            },
+            "Ultimate IronMon": {
+                "RomHash":"f3ae088181bf583e55daf962a92bb46f4f1d07b7",
+                "QolHash":"50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
+                "Randomizer": "default",
+                "RandomizerSettings": "RSE Ultimate.rnqs",
+                "Tracker": true
+            },
+            "Survival IronMon": {
+                "RomHash":"f3ae088181bf583e55daf962a92bb46f4f1d07b7",
+                "QolHash":"",
+                "Randomizer": "default",
+                "RandomizerSettings": "RSE Survival.rnqs",
+                "Tracker": true
+            },
+            "Kaizo IronMon": {
+                "RomHash":"f3ae088181bf583e55daf962a92bb46f4f1d07b7",
+                "QolHash":"",
+                "Randomizer": "default",
+                "RandomizerSettings": "RSE Kaizo.rnqs",
+                "Tracker": true
+            },
+            "Super Kaizo IronMon": {
+                "RomHash":"5dc60304b763207c9e3e18a89a2f1710eb7af542",
+                "QolHash":"e3e23ab40754a7a1188650aff28e0e109269f0a3",
+                "Randomizer": "default",
+                "RandomizerSettings": "RSE Super Kaizo.rnqs",
+                "Tracker": true
+            },
+            "NatDex Classic IronMon": {
+                "RomHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "QolHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "RSE NatDex Standard.rnqs",
+                "Tracker": true
+            },
+            "NatDex Ultimate IronMon": {
+                "RomHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "QolHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "RSE NatDex Ultimate.rnqs",
+                "Tracker": true
+            },
+            "NatDex Survival IronMon": {
+                "RomHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "QolHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "RSE NatDex Survival.rnqs",
+                "Tracker": true
+            },
+            "NatDex Kaizo IronMon": {
+                "RomHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "QolHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "RSE NatDex Kaizo.rnqs",
+                "Tracker": true
+            },
+            "NatDex Super Kaizo IronMon": {
+                "RomHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "QolHash":"23909d1a8c7cf60350eadd789d61c1e74f2a77b8",
+                "Randomizer": "natdex",
+                "RandomizerSettings": "RSE NatDex Super Kaizo.rnqs",
+                "Tracker": true
+            }
+        }
+    },
+    "007d061e1abc8d9b56c6378c82fcfb3fc990adf3": {
+        "Game": "Pokemon Heart Gold",
+        "System": "NDS",
+        "Modes": {
+            "Vanilla": {
+                "RomHash":"007d061e1abc8d9b56c6378c82fcfb3fc990adf3",
+                "QolHash":"007d061e1abc8d9b56c6378c82fcfb3fc990adf3",
+                "Randomizer": null,
+                "RandomizerSettings": null,
+                "Tracker": false
+            },
+            "Classic IronMon": {
+                "RomHash":"007d061e1abc8d9b56c6378c82fcfb3fc990adf3",
+                "QolHash":"f3107c65b4b6f349265e1867170c9982d0eca3bd",
+                "Randomizer": "default",
+                "RandomizerSettings": "HeartGoldSoulSilver_Standard.rnqs",
+                "Tracker": true
+            },
+            "Ultimate IronMon": {
+                "RomHash":"007d061e1abc8d9b56c6378c82fcfb3fc990adf3",
+                "QolHash":"f3107c65b4b6f349265e1867170c9982d0eca3bd",
+                "Randomizer": "default",
+                "RandomizerSettings": "HeartGoldSoulSilver_Ultimate.rnqs",
+                "Tracker": true
+            },
+            "Survival IronMon": {
+                "RomHash":"007d061e1abc8d9b56c6378c82fcfb3fc990adf3",
+                "QolHash":"f3107c65b4b6f349265e1867170c9982d0eca3bd",
+                "Randomizer": "default",
+                "RandomizerSettings": "HeartGoldSoulSilver_Survival.rnqs",
+                "Tracker": true
+            },
+            "Kaizo IronMon": {
+                "RomHash":"007d061e1abc8d9b56c6378c82fcfb3fc990adf3",
+                "QolHash":"f3107c65b4b6f349265e1867170c9982d0eca3bd",
+                "Randomizer": "default",
+                "RandomizerSettings": "HeartGoldSoulSilver_Kaizo.rnqs",
+                "Tracker": true
+            },
+            "Super Kaizo IronMon": {
+                "RomHash":"007d061e1abc8d9b56c6378c82fcfb3fc990adf3",
+                "QolHash":"f3107c65b4b6f349265e1867170c9982d0eca3bd",
+                "Randomizer": "default",
+                "RandomizerSettings": "HeartGoldSoulSilver_SuperKaizo.rnqs",
+                "Tracker": true
+            }
+        }
+    },
+    "ce81046eda7d232513069519cb2085349896dec7": {
+        "Game": "Pokemon Platinum",
+        "System": "NDS",
+        "Modes": {
+            "Vanilla": {
+                "RomHash":"ce81046eda7d232513069519cb2085349896dec7",
+                "QolHash":"ce81046eda7d232513069519cb2085349896dec7",
+                "Randomizer": null,
+                "RandomizerSettings": null,
+                "Tracker": false
+            },
+            "Classic IronMon": {
+                "RomHash":"ce81046eda7d232513069519cb2085349896dec7",
+                "QolHash":"931ed60e8d1b64441bfbcf042e9d6bb2a30e7a55",
+                "Randomizer": "default",
+                "RandomizerSettings": "DiamondPearlPlatinum_Standard.rnqs",
+                "Tracker": true
+            },
+            "Ultimate IronMon": {
+                "RomHash":"ce81046eda7d232513069519cb2085349896dec7",
+                "QolHash":"931ed60e8d1b64441bfbcf042e9d6bb2a30e7a55",
+                "Randomizer": "default",
+                "RandomizerSettings": "DiamondPearlPlatinum_Ultimate.rnqs",
+                "Tracker": true
+            },
+            "Survival IronMon": {
+                "RomHash":"ce81046eda7d232513069519cb2085349896dec7",
+                "QolHash":"931ed60e8d1b64441bfbcf042e9d6bb2a30e7a55",
+                "Randomizer": "default",
+                "RandomizerSettings": "DiamondPearlPlatinum_Survival.rnqs",
+                "Tracker": true
+            },
+            "Kaizo IronMon": {
+                "RomHash":"ce81046eda7d232513069519cb2085349896dec7",
+                "QolHash":"931ed60e8d1b64441bfbcf042e9d6bb2a30e7a55",
+                "Randomizer": "default",
+                "RandomizerSettings": "DiamondPearlPlatinum_Kaizo.rnqs",
+                "Tracker": true
+            },
+            "Super Kaizo IronMon": {
+                "RomHash":"ce81046eda7d232513069519cb2085349896dec7",
+                "QolHash":"931ed60e8d1b64441bfbcf042e9d6bb2a30e7a55",
+                "Randomizer": "default",
+                "RandomizerSettings": "DiamondPearlPlatinum_SuperKaizo.rnqs",
+                "Tracker": true
+            }
+        }
     }
 }

@@ -35,6 +35,9 @@ type SupportedGame struct {
 
 var SUPPORTED_HASHES = map[string]string{
 	"dd5945db9b930750cb39d00c84da8571feebf417": "Pokemon Fire Red v1.1",
+	"f3ae088181bf583e55daf962a92bb46f4f1d07b7": "Pokemon Emerald",
+	"007d061e1abc8d9b56c6378c82fcfb3fc990adf3": "Pokemon Heart Gold",
+	"d6bf0cc22ab1619335e5ae1ca0586180054147a9": "Pokemon Platinum",
 }
 
 var settings_file string = "ironlauncher.ini"
@@ -43,7 +46,8 @@ var savespath string = ""
 var gbaSettingsPath string = ""
 var ndsSettingsPath string = ""
 
-var CONTAINER string = "docker.io/besteon/ironlauncher:latest"
+// var CONTAINER string = "docker.io/besteon/ironlauncher:latest"
+var CONTAINER string = "besteon/ironlauncher:dev"
 
 type Settings struct {
 	RomsFolder  string `json:"romsFolder"`
@@ -206,6 +210,22 @@ func (a *App) StartUp() bool {
 	if hostinfo.OS == "windows" {
 		fmt.Println("Initializing Windows Podman")
 		InitWindowsPodman()
+
+		if strings.Contains(hostinfo.Platform, "Windows 10") {
+			fmt.Println("Starting vcxsrv and pulseaudio")
+			appdata := os.Getenv("APPDATA")
+			appdata += "\\ironlauncher"
+
+			cmdStr := strings.Fields(fmt.Sprintf("%s\\vcxsrv\\vcxsrv.exe -ac -multiwindow", appdata))
+			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+			cmd.Start()
+
+			cmdStr = strings.Fields(fmt.Sprintf("%s\\pulseaudio-1.1\\bin\\pulseaudio.exe", appdata))
+			cmd = exec.Command(cmdStr[0], cmdStr[1:]...)
+			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+			cmd.Start()
+		}
 	}
 
 	return true
@@ -292,6 +312,22 @@ func (a *App) InstallDependencies() bool {
 		}
 		os.Remove(out.Name())
 
+		if strings.Contains(hostinfo.Platform, "Windows 10") {
+			fmt.Println("Downloading vcxsrv and pulseaudio")
+			appdata := os.Getenv("APPDATA")
+			appdata += "\\ironlauncher"
+
+			cmdStr := strings.Fields(fmt.Sprintf("%s\\vcxsrv\\vcxsrv.exe -ac -multiwindow", appdata))
+			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
+			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+			cmd.Start()
+
+			cmdStr = strings.Fields(fmt.Sprintf("%s\\pulseaudio-1.1\\bin\\pulseaudio.exe", appdata))
+			cmd = exec.Command(cmdStr[0], cmdStr[1:]...)
+			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
+			cmd.Start()
+		}
+
 		return Which("podman")
 	} else if hostinfo.OS == "linux" {
 		cmdStr := strings.Fields("sudo -A apt install -y podman pulseaudio xwayland && Xwayland")
@@ -350,16 +386,16 @@ func (a *App) StartContainer(path string) {
 			ip := GetOutboundIP()
 			cmdStr := strings.Fields(strings.ReplaceAll(fmt.Sprintf(`wsl --distribution podman-machine-default podman run 
 			-e 'DISPLAY=%s:0' 
-			-e 'PULSE_SERVER=/mnt/wslg/PulseServer' 
-			-v '/mnt/wslg/:/mnt/wslg/' 
-			-v '%s:/roms'
+			-e 'PULSE_SERVER=tcp:%s' 
+			-v '%s:/roms' 
+			-v '%s:/data' 
 			-v '%s:/data/saves'
 			-v '%s\config.ini:/home/launcher/BizHawk/config.ini'
 			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/gba/Ironmon-Tracker/Settings.ini'
 			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/nds/Ironmon-Tracker/Settings.ini'
 			-v '%s:/home/launcher/ironlauncher.ini'
 			--net=host 
-			%s`, ip, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER), `\`, `\\`))
+			%s`, ip, ip, path, datapath, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER), `\`, `\\`))
 			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
 			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 			err := cmd.Start()
@@ -375,13 +411,14 @@ func (a *App) StartContainer(path string) {
 			-v '/mnt/wslg/:/mnt/wslg/' 
 			-v '/mnt/wslg/.X11-unix:/tmp/.X11-unix' 
 			-v '%s:/roms'
+			-v '%s:/data' 
 			-v '%s:/data/saves'
 			-v '%s\config.ini:/home/launcher/BizHawk/config.ini'
 			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/gba/Ironmon-Tracker/Settings.ini'
 			-v '%s\Settings.ini:/home/launcher/BizHawk/Lua/nds/Ironmon-Tracker/Settings.ini'
 			-v '%s:/home/launcher/ironlauncher.ini'
 			--net=host 
-			%s`, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER), `\`, `\\`))
+			%s`, path, datapath, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER), `\`, `\\`))
 			fmt.Println(cmdStr)
 			cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
 			cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
@@ -407,13 +444,14 @@ func (a *App) StartContainer(path string) {
 			-v %s/.config/pulse/cookie:/root/.config/pulse/cookie
 			-v /tmp/.X11-unix:/tmp/.X11-unix:ro
 			-v '%s:/roms'
+			-v '%s:/data' 
 			-v '%s:/data/saves'
 			-v '%s/config.ini:/home/launcher/BizHawk/config.ini'
 			-v '%s/Settings.ini:/home/launcher/BizHawk/Lua/gba/Ironmon-Tracker/Settings.ini'
 			-v '%s/Settings.ini:/home/launcher/BizHawk/Lua/nds/Ironmon-Tracker/Settings.ini'
 			-v '%s:/home/launcher/ironlauncher.ini'
 			--net=host
-			%s`, display, xdg, xdg, xdg, home, path, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER))
+			%s`, display, xdg, xdg, xdg, home, path, datapath, savespath, datapath, gbaSettingsPath, ndsSettingsPath, settings_file, CONTAINER))
 		cmd := exec.Command(cmdStr[0], cmdStr[1:]...)
 		cmd.SysProcAttr = &syscall.SysProcAttr{CreationFlags: 0x08000000} // CREATE_NO_WINDOW
 		cmd.Start()

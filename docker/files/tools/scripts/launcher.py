@@ -7,14 +7,14 @@ import subprocess
 import networkx as nx
 
 
-def recoverRom(romsFolder, patchesFolder, patchGraphFile, target_hash, base_rom, out_folder):
+def recoverRom(romsFolder, patchesFolder, patchGraphFile, target_hash, base_rom):
 
     FILE_HASHES = {}
 
-    for rom in os.listdir(romsFolder):
-        with open(f'{romsFolder}/{rom}', 'rb') as r:
-            orig_sha1 = hashlib.sha1(r.read()).hexdigest()
-        FILE_HASHES[orig_sha1] = rom
+    orig_sha1 = ""
+    with open(f'{romsFolder}/{base_rom}', 'rb') as r:
+        orig_sha1 = hashlib.sha1(r.read()).hexdigest()
+    FILE_HASHES[orig_sha1] = rom
     
     for patch in os.listdir(patchesFolder):
         with open(f'{patchesFolder}/{patch}', 'rb') as p:
@@ -33,22 +33,13 @@ def recoverRom(romsFolder, patchesFolder, patchGraphFile, target_hash, base_rom,
         G.add_node(x['new'], root_rom=False)
         G.add_edge(x['orig'], x['new'], patch=x['patch'])
 
-    rom_nodes = [x for x,y in G.nodes(data=True) if y['root_rom'] == True]
-
-    shortest = 1000
-    path = None
-    for x in rom_nodes:
-        sp = nx.shortest_path(G, source=x, target=target_hash)
-        if len(sp) < shortest:
-            shortest = len(sp)
-            path = sp
-
+    path = nx.shortest_path(G, source=orig_sha1, target=target_hash)
     pathGraph = nx.path_graph(path)
 
     edges = list(pathGraph.edges())
     if len(edges) > 0:
         from_rom = f'{romsFolder}/{base_rom}'
-        to_rom = f'/tmp/{base_rom}'
+        to_rom = f'/data/IronLauncher_Generated_{base_rom}'
         for edge in pathGraph.edges():
             patch_file = FILE_HASHES[G.edges[edge[0], edge[1]]['patch']]
             cmd = f'/home/launcher/files/tools/binaries/flips --apply "{patchesFolder}/{patch_file}" "{from_rom}" "{to_rom}"'
@@ -58,9 +49,8 @@ def recoverRom(romsFolder, patchesFolder, patchGraphFile, target_hash, base_rom,
             with open(to_rom, 'rb') as new:
                 new_sha1 = hashlib.sha1(new.read()).hexdigest()
                 if new_sha1 == target_hash:
-                    #shutil.copy(to_rom, f"{out_folder}/{base_rom}")
                     print('Successfully recovered target ROM.')
-                    return True
+                    return to_rom
                 else:
                     print(f'Applied patch {patch_file}. More patches to go.')                
 
@@ -68,8 +58,7 @@ def recoverRom(romsFolder, patchesFolder, patchGraphFile, target_hash, base_rom,
         return False
     else:
         print('No patches needed')
-        shutil.copy(f'{romsFolder}/{base_rom}', f'/tmp/{base_rom}')
-        return True
+        return ""
 
 
 if __name__ == '__main__':
@@ -113,9 +102,12 @@ if __name__ == '__main__':
     modeObj = game_modes[selected_rom_hash]["Modes"][mode]
     target_hash = modeObj["QolHash"] if qolPatches and "QolHash" in modeObj else modeObj['RomHash']
 
+    print(f'ROM: {rom}')
+    print(f'Base: {selected_rom_hash}')
     print(f'Target: {target_hash}')
-    out_folder = "/tmp"
-    recoveredRom = recoverRom("/roms", f"{HOME}/files/patches", PATCH_GRAPH, target_hash, rom, out_folder)
+
+    romsFolder = "/roms"
+    recoveredRom = recoverRom(romsFolder, f"{HOME}/files/patches/{selected_rom_hash}", PATCH_GRAPH, target_hash, rom)
 
     if modeObj['Tracker']:
         ironmonSettings = configparser.ConfigParser()
@@ -129,7 +121,7 @@ if __name__ == '__main__':
 
         rando = modeObj['RandomizerSettings']
         ironmonSettings['config']['Settings_File'] = f"/home/launcher/BizHawk/Lua/{system}/Ironmon-Tracker/ironmon_tracker/RandomizerSettings/{rando}"
-        ironmonSettings['config']['Source_ROM'] = f"{out_folder}/{rom}"
+        ironmonSettings['config']['Source_ROM'] = f"{recoveredRom}"
 
         if modeObj['Randomizer'] == 'default':
             ironmonSettings['config']['Randomizer_JAR'] = '/home/launcher/PokeRandoZX.jar'
@@ -142,7 +134,7 @@ if __name__ == '__main__':
     else:
         bizhawk_config['RecentLua']['recentlist'] = []
 
-    bizhawk_config['RecentRoms']['recentlist'] = [f"*OpenRom*{out_folder}/{rom}"]
+    bizhawk_config['RecentRoms']['recentlist'] = [f"*OpenRom*{recoveredRom}"]
     bizhawk_config['RecentRoms']['AutoLoad'] = True
     with open(BIZHAWKINI, 'w') as b_config:
         json.dump(bizhawk_config, b_config, indent=1)
