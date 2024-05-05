@@ -109,14 +109,14 @@
             },
             "Survival IronMon": {
                 "RomHash":"f3ae088181bf583e55daf962a92bb46f4f1d07b7",
-                "QolHash":"",
+                "QolHash":"50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
                 "Randomizer": "default",
                 "RandomizerSettings": "RSE Survival.rnqs",
                 "Tracker": true
             },
             "Kaizo IronMon": {
                 "RomHash":"f3ae088181bf583e55daf962a92bb46f4f1d07b7",
-                "QolHash":"",
+                "QolHash":"50ce151d6afcff6b89f2c646c2ad3f2cb1c0fd11",
                 "Randomizer": "default",
                 "RandomizerSettings": "RSE Kaizo.rnqs",
                 "Tracker": true
